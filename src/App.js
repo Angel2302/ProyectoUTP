@@ -3,10 +3,9 @@
 import React from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Category from "./Category";
-import Products from "./Products";
+import Members from "./Members";
 import Login from './Login';
 import PrivateRoute from "./PrivateRoute";
-
 const Home = () => (
   <div>
     <h2>Home</h2>
@@ -21,9 +20,9 @@ const Admin = () => (
 
 export default function App() {
   return (
-    <div>
-      <nav className="navbar navbar-light">
-        <ul className="nav navbar-nav">
+    <div color="red"> 
+      <nav className="navbar navbar-light" >
+        <ul className="nav navbar-nav" >
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -31,10 +30,13 @@ export default function App() {
             <Link to="/category">Category</Link>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <Link to="/members">Members</Link>
           </li>
           <li>
-            <Link to="/admin">Admin area</Link>
+            <button>
+              <Link to="/admin">Admin area</Link>
+            </button>
+            
           </li>
         </ul>
       </nav>
@@ -42,7 +44,7 @@ export default function App() {
       <Switch>
         <Route exact path="/"><Home /></Route>
         <Route path="/category"><Category /></Route>
-        <Route path="/products"><Products /></Route>
+        <Route path="/members"><Members /></Route>
         <Route path="/login"><Login /></Route>
         <PrivateRoute path="/admin" component={Admin} />
       </Switch>
