@@ -20,13 +20,16 @@ const Category = () => {
     <div>
       <ul>
         <li>
-          <Link to={`${url}/shoes`}>Shoes</Link>
+          <Link to={`${url}/tools`}>Tools</Link>
         </li>
         <li>
-          <Link to={`${url}/boots`}>Boots</Link>
+          <Link to={`${url}/seeds`}>Seeds</Link>
         </li>
         <li>
-          <Link to={`${url}/footwear`}>Footwear</Link>
+          <Link to={`${url}/fertilizers`}>Fertilizers</Link>
+        </li>
+        <li>
+          <Link to={`${url}/plants`}>plants</Link>
         </li>
       </ul>
       <Route path={`${path}/:name`}>

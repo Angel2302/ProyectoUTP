@@ -1,16 +1,13 @@
 // src/App.js
 
 import React from "react";
+import  "bootstrap/dist/css/bootstrap.min.css";
 import { Link, Route, Switch } from "react-router-dom";
 import Category from "./Category";
 import Members from "./Members";
+import Home from "./Home";
 import Login from './Login';
 import PrivateRoute from "./PrivateRoute";
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
 
 const Admin = () => (
   <div>
@@ -20,11 +17,11 @@ const Admin = () => (
 
 export default function App() {
   return (
-    <div color="red"> 
-      <nav className="navbar navbar-light" >
-        <ul className="nav navbar-nav" >
+    <div > 
+      <nav class="navbar navbar-expand-sm font-weigtth-bold bg-dark" >
+        <ul class="nav navbar-nav" >
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/Home">Home</Link>
           </li>
           <li>
             <Link to="/category">Category</Link>
@@ -32,17 +29,14 @@ export default function App() {
           <li>
             <Link to="/members">Members</Link>
           </li>
-          <li>
-            <button>
-              <Link to="/admin">Admin area</Link>
-            </button>
-            
+          <li>            
+              <Link to="/admin">Login</Link>        
           </li>
         </ul>
       </nav>
 
       <Switch>
-        <Route exact path="/"><Home /></Route>
+        <Route Exact path="/Home"><Home /></Route>
         <Route path="/category"><Category /></Route>
         <Route path="/members"><Members /></Route>
         <Route path="/login"><Login /></Route>
