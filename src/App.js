@@ -31,7 +31,7 @@ export default function App() {
                 </svg>}
             </a>
           </div> 
-          <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+          <div class="navbar navbar-expand-xl bg-dark">
               <ul class="navbar-nav mr-auto" >
               <li>
                 <Link to="/Home" class= "nav-link">Home</Link>
@@ -54,7 +54,7 @@ export default function App() {
                   <span class="navbar-toggler-icon"></span>
               </button>
           </div> */}
-          <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <div class="navbar navbar-expand-xl w-100 bg-dar">
               <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <Link to="/members" class= "nav-link" >Members</Link>
