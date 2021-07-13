@@ -9,6 +9,7 @@ import Home from "./Home";
 import Login from './Login';
 import PrivateRoute from "./PrivateRoute";
 
+
 const Admin = () => (
   <div>
     <h2>Welcome admin!</h2>
@@ -62,34 +63,7 @@ export default function App() {
               </ul>
           </div>
        </nav>
-      {/* <nav class="navbar navbar-inverse"  >
-        
-        
-        <a class="navbar-brand" href="#">
-         { <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plant" width="64" height="64" viewBox="0 0 24 24" stroke-width="2" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M7 15h10v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-4z" />
-            <path d="M12 9a6 6 0 0 0 -6 -6h-3v2a6 6 0 0 0 6 6h3" />
-            <path d="M12 11a6 6 0 0 1 6 -6h3v1a6 6 0 0 1 -6 6h-3" />
-            <line x1="12" y1="15" x2="12" y2="9" />
-          </svg>}
-        </a>
       
-        <ul class="nav navbar-nav mr-auto">
-          <li>
-            <Link to="/Home">Home</Link>
-          </li>
-          <li>
-            <Link to="/category">Category</Link>
-          </li>
-          <li>
-            <Link to="/members">Members</Link>
-          </li>
-          <li>            
-              <Link to="/admin">Login</Link>        
-          </li>
-        </ul>
-      </nav>
 
         <Switch>
           <Route Exact path="/Home"><Home /></Route>
