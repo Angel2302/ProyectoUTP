@@ -19,8 +19,13 @@ export default function Login() {
   }
 
   return (
-    <div>
-        <form>
+    <div class= "container">
+        {/* login-form */}
+        <div>
+        <p>You must log in to view the page at {from.pathname}</p>
+        </div>
+
+        <form class= "container">
           {/* <!-- Email input --> */}
           <div class="form-outline mb-4">
             <input type="email" id="form2Example1" class="form-control" />
@@ -61,6 +66,8 @@ export default function Login() {
           {/* <!-- Register buttons --> */}
           <div class="text-center">
             <p>Not a member? <a href="#!">Register</a></p>
+
+            {/* social media buttons ///////////////////////////*/}
             {/* <p>or sign up with:</p>
             <button type="button" class="btn btn-primary btn-floating mx-1">
               <i class="fab fa-facebook-f"></i>
@@ -79,7 +86,8 @@ export default function Login() {
             </button> */}
           </div>
         </form>
-      <p>You must log in to view the page at {from.pathname}</p>
+        
+      
 
       {/* <!-- Submit button --> */}
       <button onClick={login} class="btn btn-success btn-block mb-4">Log in</button>
