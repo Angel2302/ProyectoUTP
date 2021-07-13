@@ -19,6 +19,17 @@ export default function App() {
   return (
     <div> 
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <div>
+            <a class="navbar-brand" >
+              { <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plant" width="64" height="64" viewBox="0 0 24 24" stroke-width="2" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M7 15h10v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-4z" />
+                  <path d="M12 9a6 6 0 0 0 -6 -6h-3v2a6 6 0 0 0 6 6h3" />
+                  <path d="M12 11a6 6 0 0 1 6 -6h3v1a6 6 0 0 1 -6 6h-3" />
+                  <line x1="12" y1="15" x2="12" y2="9" />
+                </svg>}
+            </a>
+          </div> 
           <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
               <ul class="navbar-nav mr-auto" >
               <li>
