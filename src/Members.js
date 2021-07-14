@@ -39,8 +39,8 @@ const Members = ({ match }) => {
           id: 5,
           name: "Sebastian Zapata Ossa",
           description:
-            "Ut hendrerit venenatis lacus, vel lacinia ipsum fermentum vel. Cras.",
-          status: "back-end",
+            "Petroleum engineer, software development student at UNAD, specialized in front end development",
+          status: "front-end, back-end",
         },
       ];
 
@@ -51,26 +51,30 @@ const Members = ({ match }) => {
   const linkList = memberData.map((member) => {
     return (
       <li key={member.id}>
-        <Link to={`${url}/${member.id}`}>{member.name}</Link>
+        <Link class= "h5" to={`${url}/${member.id}`}>{member.name}</Link>
       </li>
     );
   });
 
   return (
-    <div>
-      <div>
-        <div >
+    <div class= "container">
+      <div class= "row">
+        <div class= "col" >
           <h3>Members</h3>
           <ul>{linkList}</ul>
         </div>
+        <div class= "col">
+          <Route path={`${url}/:memberId`}>
+            <Member data={memberData} />
+          </Route>
+          <Route exact path={url}>
+            <p>To know more about our Members Please select one.</p>
+          </Route>
       </div>
+      </div>
+      
 
-      <Route path={`${url}/:memberId`}>
-        <Member data={memberData} />
-      </Route>
-      <Route exact path={url}>
-        <p>know more about our Members Please select a member.</p>
-      </Route>
+     
     </div>
   );
 };
