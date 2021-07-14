@@ -22,7 +22,7 @@ export default function Login() {
     <div class= "container">
         {/* login-form */}
         <div>
-        <p>You must log in to view the page at {from.pathname}</p>
+        <h3>You must log in to view the page at {from.pathname}</h3>
         </div>
 
         <form class= "container">

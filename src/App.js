@@ -34,16 +34,16 @@ export default function App() {
           <div class="navbar navbar-expand-xl bg-dark">
               <ul class="navbar-nav mr-auto" >
               <li>
-                <Link to="/Home" class= "nav-link">Home</Link>
+                <Link to="/Home" class= "nav-link h5">Home</Link>
               </li>
                   
                   
             <li>
-            <Link to="/category" class= "nav-link">Category</Link>
+            <Link to="/category" class= "nav-link h5">Category</Link>
             </li>
               
             <li>            
-                <Link to="/admin" class= "nav-link" >Login</Link>        
+                <Link to="/admin" class= "nav-link h5" >Login</Link>        
             </li>    
                   
               </ul>
@@ -57,7 +57,7 @@ export default function App() {
           <div class="navbar navbar-expand-xl w-100 bg-dar">
               <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <Link to="/members" class= "nav-link" >Members</Link>
+                <Link to="/members" class= "nav-link h5" >Members</Link>
               </li>
                   
               </ul>
