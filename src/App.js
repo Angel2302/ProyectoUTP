@@ -6,20 +6,17 @@ import { Link, Route, Switch } from "react-router-dom";
 import Category from "./Category";
 import Members from "./Members";
 import Home from "./Home";
-import Login from './Login';
+
 import PrivateRoute from "./PrivateRoute";
+import Routes from "./Routes";
 
 
-const Admin = () => (
-  <div>
-    <h2>Welcome admin!</h2>
-  </div>
-);
+
 
 export default function App() {
   return (
     <div> 
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav class="navbar  navbar-expand-md navbar-light bg-secondary">
           <div>
             <a class="navbar-brand" >
               { <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plant" width="64" height="64" viewBox="0 0 24 24" stroke-width="2" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -34,16 +31,16 @@ export default function App() {
           <div class="navbar navbar-expand-xl bg-dark">
               <ul class="navbar-nav mr-auto" >
               <li>
-                <Link to="/Home" class= "nav-link h5">Home</Link>
+                <Link to="/Home" class= "nav-link h5 text-white">Home</Link>
               </li>
                   
                   
             <li>
-            <Link to="/category" class= "nav-link h5">Category</Link>
+            <Link to="/category" class= "nav-link h5 text-white">Category</Link>
             </li>
               
             <li>            
-                <Link to="/admin" class= "nav-link h5" >Login</Link>        
+                <Link to="/login" class= "nav-link h5 text-white" >Login</Link>        
             </li>    
                   
               </ul>
@@ -54,7 +51,7 @@ export default function App() {
                   <span class="navbar-toggler-icon"></span>
               </button>
           </div> */}
-          <div class="navbar navbar-expand-xl w-100 bg-dar">
+          <div class="navbar navbar-expand-xl w-100 bg-dar ">
               <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <Link to="/members" class= "nav-link h5" >Members</Link>
@@ -66,11 +63,10 @@ export default function App() {
       
 
         <Switch>
-          <Route Exact path="/Home"><Home /></Route>
+          <Route Exact path="/home"><Home /></Route>
           <Route path="/category"><Category /></Route>
-          <Route path="/members"><Members /></Route>
-          <Route path="/login"><Login /></Route>
-          <PrivateRoute path="/admin" component={Admin} />
+          <Route path="/members"><Members /></Route>          
+          <Route path="/login"><Routes/></Route> 
         </Switch>
     </div>
   );

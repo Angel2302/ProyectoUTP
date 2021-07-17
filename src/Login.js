@@ -1,25 +1,29 @@
 // src/Login.js
 
 import React, { useState } from "react";
-import { Redirect, useLocation } from "react-router-dom";
+
+import { Route, Redirect, useLocation } from "react-router-dom";
+
 
 export default function Login() {
   const { state } = useLocation();
   const { from } = state || { from: { pathname: "/" } };
-  const [redirectToReferrer, setRedirectToReferrer] = useState(false);
+  const [redirectToReferrer, setRedirectToReferrer] = useState(true);
 
   const login = () => {
     fakeAuth.authenticate(() => {
-      setRedirectToReferrer(true);
+      setRedirectToReferrer(false);
     });
   };
 
-  if (redirectToReferrer) {
+  if (!redirectToReferrer) { 
+    
     return <Redirect to={from} />;
+        
   }
 
   return (
-    <div class= "container">
+    <div class= "container ">
         {/* login-form */}
         <div>
         <h3>You must log in to view the page at {from.pathname}</h3>
@@ -29,7 +33,7 @@ export default function Login() {
           {/* <!-- Email input --> */}
           <div class="form-outline mb-4">
             <input type="email" id="form2Example1" class="form-control" />
-            <label class="form-label" for="form2Example1">Email address</label>
+            <label class="form-label" for="form2Example1">username</label>
           </div>
 
           {/* <!-- Password input --> */}
@@ -101,5 +105,6 @@ export const fakeAuth = {
   authenticate(cb) {
     this.isAuthenticated = true;
     setTimeout(cb, 100);
+    
   }
 };
