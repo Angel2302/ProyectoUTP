@@ -48,7 +48,7 @@ export default function Login() {
                   type="checkbox"
                   value=""
                   id="form2Example3"
-                  checked
+                  unchecked
                 />
                 <label class="form-check-label" for="form2Example3"> Remember me </label>
               </div>
