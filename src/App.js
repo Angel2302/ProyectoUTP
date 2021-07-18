@@ -8,6 +8,7 @@ import Members from "./Members";
 import Home from "./Home";
 import Admin from "./Admin";
 import Login from "./Login";
+import Forgot from "./Forgot";
 import PrivateRoute from "./PrivateRoute";
 import { Form } from "react-bootstrap";
 import Formulario from "./Formulario";
@@ -72,6 +73,7 @@ export default function App() {
           <Route path="/login"><Login/></Route>
           <Route path="/formulario"><Formulario/></Route> 
           <Route path="/admin"><Admin/></Route>
+          <Route path="/forgot"><Forgot/></Route>
         </Switch>
     </div>
   );

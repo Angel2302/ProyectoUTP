@@ -60,7 +60,7 @@ export default function Login() {
 
             <div class="col">
               {/* <!-- Simple link --> */}
-              <a href="#!">Forgot password?</a>
+              <a href="/forgot">Forgot password?</a>
             </div>
           </div>
 

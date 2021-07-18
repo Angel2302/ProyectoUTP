@@ -98,7 +98,9 @@ const Formulario = () => {
                 </div>
                 
                 <div class='mt-3'>
-                    <button class="btn btn-success btn-block mb-4">send</button>
+                    <button class="btn btn-success btn-block mb-4">
+                    <Link to="/login" class= "nav-link h5" >send</Link>
+                    </button>
                 </div>
 
             </form>
