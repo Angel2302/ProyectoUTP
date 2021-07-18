@@ -18,7 +18,8 @@ const Formulario = () => {
         Name:'',
         Lastname:'',
         Username: '',
-        Email: ''
+        Email: '',
+        Password: ''
     })
 
     const handleInputChange =(event) => {
@@ -47,7 +48,7 @@ const Formulario = () => {
                         ></input>
                 </div>
                 <div class='row mt-2'>
-                    <div class='col-3'>
+                    <div class='col-4'>
                         <input
                             placeholder="Name"
                             className="form-control"
@@ -56,7 +57,7 @@ const Formulario = () => {
                             omChange={handleInputChange}
                         ></input>
                     </div>
-                    <div class='col-3'>
+                    <div class='col-4'>
                         <input
                             placeholder="Lastname"
                             className="form-control"
@@ -65,7 +66,7 @@ const Formulario = () => {
                             omChange={handleInputChange}
                         ></input>
                     </div>
-                    <div class='col-3'>
+                    <div class='col-4'>
                         <input
                             placeholder="Username"
                             className="form-control"
@@ -75,9 +76,29 @@ const Formulario = () => {
                         ></input>
                     </div>
                 </div>
+                <div class='row mt-3'>
+                    <div class='col-6'>
+                        <input
+                            placeholder="password"
+                            className="form-control"
+                            type="text"
+                            Passworde="passworde"
+                            omChange={handleInputChange}
+                        ></input>
+                    </div>
+                    <div class='col-6'>
+                        <input
+                            placeholder="confirm password"
+                            className="form-control"
+                            type="text"
+                            Username="Username"
+                            omChange={handleInputChange}
+                        ></input>
+                    </div>
+                </div>
                 
-                <div class='col-3'>
-                    <button>send</button>
+                <div class='mt-3'>
+                    <button class="btn btn-success btn-block mb-4">send</button>
                 </div>
 
             </form>
