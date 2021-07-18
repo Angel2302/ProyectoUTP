@@ -6,9 +6,11 @@ import { Link, Route, Switch } from "react-router-dom";
 import Category from "./Category";
 import Members from "./Members";
 import Home from "./Home";
-
+import Admin from "./Admin";
+import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
-import Routes from "./Routes";
+import { Form } from "react-bootstrap";
+import Formulario from "./Formulario";
 
 
 
@@ -30,19 +32,19 @@ export default function App() {
           </div> 
           <div class="navbar navbar-expand-xl bg-dark">
               <ul class="navbar-nav mr-auto" >
-              <li>
-                <Link to="/Home" class= "nav-link h5 text-white">Home</Link>
-              </li>
+                <li>
+                  <Link to="/Home" class= "nav-link h5 text-white">Home</Link>
+                </li>
+                    
+                    
+                <li>
+                <Link to="/category" class= "nav-link h5 text-white">Category</Link>
+                </li>
                   
-                  
-            <li>
-            <Link to="/category" class= "nav-link h5 text-white">Category</Link>
-            </li>
-              
-            <li>            
-                <Link to="/login" class= "nav-link h5 text-white" >Login</Link>        
-            </li>    
-                  
+                <li>            
+                    <Link to="/login" class= "nav-link h5 text-white" >Login</Link>        
+                </li>              
+                    
               </ul>
           </div>
           {/* <div class="mx-auto order-0">
@@ -64,9 +66,12 @@ export default function App() {
 
         <Switch>
           <Route Exact path="/home"><Home /></Route>
+          <Route path="/" exact><Home /></Route>
           <Route path="/category"><Category /></Route>
           <Route path="/members"><Members /></Route>          
-          <Route path="/login"><Routes/></Route> 
+          <Route path="/login"><Login/></Route>
+          <Route path="/formulario"><Formulario/></Route> 
+          <Route path="/admin"><Admin/></Route>
         </Switch>
     </div>
   );

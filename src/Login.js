@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import { Route, Redirect, useLocation } from "react-router-dom";
+import { Link, Route, Redirect, useLocation } from "react-router-dom";
 
 
 export default function Login() {
@@ -18,7 +18,7 @@ export default function Login() {
 
   if (!redirectToReferrer) { 
     
-    return <Redirect to={from} />;
+    return  <Redirect to={from} />;
         
   }
 
@@ -69,7 +69,7 @@ export default function Login() {
 
           {/* <!-- Register buttons --> */}
           <div class="text-center">
-            <p>Not a member? <a href="#!">Register</a></p>
+            <p>Not a member? <a href="/formulario">Register</a></p>
 
             {/* social media buttons ///////////////////////////*/}
             {/* <p>or sign up with:</p>
@@ -94,7 +94,9 @@ export default function Login() {
       
 
       {/* <!-- Submit button --> */}
-      <button onClick={login} class="btn btn-success btn-block mb-4">Log in</button>
+      <button onClick={login} class="btn btn-success btn-block mb-4">
+      <Link to="/admin" class= "nav-link h5" >Login</Link>
+      </button>      
     </div>
   );
 }
