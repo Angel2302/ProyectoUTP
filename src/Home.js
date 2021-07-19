@@ -60,14 +60,12 @@ const Home = () => {
 </Carousel>
   <div class="bg-light p-5 rounded">
     <h1 fontStyle="vertical-align: inherit;">The Green List</h1>
-    <p class="lead fontStyle-vertical-align-inherit">Lorem Ipsum is simply dummy text of the printing
-     and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
-      the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-       book. It has survived not only five centuries, but also the leap into electronic typesetting, 
-       remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-         like Aldus PageMaker including versions of Lorem Ipsum. </p>
-    <a class="btn btn-lg btn-primary" href="Docs" >Ver documentos de la barra de navegación »</a>
+    <p class="lead fontStyle-vertical-align-inherit">With this project, it is expected to 
+    reach a medium range in the region, covering varied territories and with different locations, 
+    for now with Spanish speaking, our target audience being individuals belonging to the horticultural 
+    community and those gardening enthusiasts with an interest in sharing their 
+    knowledge regarding articles used daily in this medium </p>
+    <a class="btn btn-lg btn-primary" href="Docs" >See NavBar Docs »</a>
   </div>
   
 </main>
