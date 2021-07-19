@@ -21,7 +21,7 @@ import Formulario from "./Formulario";
 export default function App() {
   return (
     <div> 
-      <nav class="navbar  navbar-expand-md navbar-light bg-secondary">
+      <nav class="navbar  navbar-expand-md navbar-dark bg-secondary">
           <div>
             <a class="navbar-brand" >
               { <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plant" width="64" height="64" viewBox="0 0 24 24" stroke-width="2" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -33,19 +33,19 @@ export default function App() {
                 </svg>}
             </a>
           </div> 
-          <div class="navbar navbar-expand-xl bg-dark">
+          <div class="navbar navbar-expand-xl  ">
               <ul class="navbar-nav mr-auto" >
                 <li>
-                  <Link to="/Home" class= "nav-link h5 text-white">Home</Link>
+                  <Link to="/Home" class= "nav-link h5 ">Home</Link>
                 </li>
                     
                     
                 <li>
-                <Link to="/category" class= "nav-link h5 text-white">Category</Link>
+                <Link to="/category" class= "nav-link h5 ">Category</Link>
                 </li>
                   
                 <li>            
-                    <Link to="/login" class= "nav-link h5 text-white" >Login</Link>        
+                    <Link to="/login" class= "nav-link h5 " >Login</Link>        
                 </li>              
                     
               </ul>
