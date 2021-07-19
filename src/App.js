@@ -75,7 +75,7 @@ export default function App() {
           <Route path="/formulario"><Formulario/></Route> 
           <Route path="/admin"><Admin/></Route>
           <Route path="/forgot"><Forgot/></Route>
-          <Route path="/category/products"><Products/></Route>
+          <Route path="/products"><Products/></Route>
         </Switch>
     </div>
   );

@@ -3,15 +3,15 @@
 import React from "react";
 import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
 
-const Item = () => {
-  const { name } = useParams();
+// const Item = () => {
+//   const { name } = useParams();
 
-  return (
-    <div>
-      <h3>{name}</h3>
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <h3>{name}</h3>
+//     </div>
+//   );
+// };
 
 const Category = () => {
   const { url, path } = useRouteMatch();
@@ -20,21 +20,21 @@ const Category = () => {
     <div>
       <ul>
         <li>
-          <Link to={`${url}/products`}>Tools</Link>
+          <Link to={`/products`}>Tools</Link>
         </li>
         <li>
-          <Link to={`${url}/products`}>Seeds</Link>
+          <Link to={`/products`}>Seeds</Link>
         </li>
         <li>
-          <Link to={`${url}/products`}>Fertilizers</Link>
+          <Link to={`/products`}>Fertilizers</Link>
         </li>
         <li>
-          <Link to={`${url}/products`}>plants</Link>
+          <Link to={`/products`}>plants</Link>
         </li>
       </ul>
-      <Route path={`${path}/:name`}>
+      {/* <Route path={`${path}/:name`}>
         <Item />
-      </Route>
+      </Route> */}
     </div>
   );
 };

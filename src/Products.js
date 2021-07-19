@@ -64,7 +64,7 @@ const Products = ({ match }) => {
           <ul>{linkList}</ul>
         </div>
         <div class= "col">
-          <Route path={`${url}/:memberId`}>
+          <Route path={`${url}/:productId`}>
             <Product data={productData} />
           </Route>
           <Route exact path={url}>
