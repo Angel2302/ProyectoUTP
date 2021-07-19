@@ -29,17 +29,17 @@ export default function Login() {
         <h3>You must log in to view the page at {from.pathname}</h3>
         </div>
 
-        <form class= "container">
+        <form class= "container sm">
           {/* <!-- Email input --> */}
           <div class="form-outline mb-4">
             <input type="email" id="form2Example1" class="form-control" />
-            <label class="form-label" for="form2Example1">username</label>
+            <label class="form-label h5" for="form2Example1">Username</label>
           </div>
 
           {/* <!-- Password input --> */}
           <div class="form-outline mb-4">
             <input type="password" id="form2Example2" class="form-control" />
-            <label class="form-label" for="form2Example2">Password</label>
+            <label class="form-label h5" for="form2Example2">Password</label>
           </div>
 
           {/* <!-- 2 column grid layout for inline styling --> */}
@@ -52,7 +52,7 @@ export default function Login() {
                   type="checkbox"
                   value=""
                   id="form2Example3"
-                  checked
+                  unchecked
                 />
                 <label class="form-check-label" for="form2Example3"> Remember me </label>
               </div>
@@ -94,9 +94,12 @@ export default function Login() {
       
 
       {/* <!-- Submit button --> */}
-      <button onClick={login} class="btn btn-success btn-block mb-4">
-      <Link to="/admin" class= "nav-link h5" >Login</Link>
+      <div class="col text-center">
+      <button onClick={login} class="btn btn-success regular-button  ">
+      <Link to="/admin" class= "nav-link h5 text-white" >Login</Link>
       </button>      
+    			</div>
+      
     </div>
   );
 }
