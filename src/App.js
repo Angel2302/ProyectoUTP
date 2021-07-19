@@ -10,6 +10,7 @@ import Admin from "./Admin";
 import Login from "./Login";
 import Forgot from "./Forgot";
 import Products from "./Products";
+import Docs from "./Docs";
 import PrivateRoute from "./PrivateRoute";
 import { Form } from "react-bootstrap";
 import Formulario from "./Formulario";
@@ -67,7 +68,7 @@ export default function App() {
       
 
         <Switch>
-          <Route Exact path="/home"><Home /></Route>
+          <Route path="/home"><Home /></Route>
           <Route path="/" exact><Home /></Route>
           <Route path="/category"><Category /></Route>
           <Route path="/members"><Members /></Route>          
@@ -76,6 +77,7 @@ export default function App() {
           <Route path="/admin"><Admin/></Route>
           <Route path="/forgot"><Forgot/></Route>
           <Route path="/products"><Products/></Route>
+          <Route path="/Docs"><Docs/></Route>
         </Switch>
     </div>
   );

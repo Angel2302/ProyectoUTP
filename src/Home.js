@@ -28,7 +28,7 @@ const Home = () => {
        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
          like Aldus PageMaker including versions of Lorem Ipsum. </p>
-    <a class="btn btn-lg btn-primary" href="Documentos" >Ver documentos de la barra de navegación »</a>
+    <a class="btn btn-lg btn-primary" href="Docs" >Ver documentos de la barra de navegación »</a>
   </div>
 </main>
   );
