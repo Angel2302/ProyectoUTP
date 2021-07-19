@@ -17,24 +17,31 @@ const Category = () => {
   const { url, path } = useRouteMatch();
 
   return (
+    
     <div>
-      <ul>
-        <li>
-          <Link to={`/products`}>Tools</Link>
-        </li>
-        <li>
-          <Link to={`/products`}>Seeds</Link>
-        </li>
-        <li>
-          <Link to={`/products`}>Fertilizers</Link>
-        </li>
-        <li>
-          <Link to={`/products`}>plants</Link>
-        </li>
-      </ul>
-      {/* <Route path={`${path}/:name`}>
-        <Item />
-      </Route> */}
+      <div class="container">
+        <h2>Services and products you may find at Greenlist</h2>
+        <div class="list-group list-group-mine ">
+          <li href="#" class="list-group-item  list-group-mine bg-secondary">
+            <Link to={`/products`}><h4 class="list-group-item-heading text-black-50">Tools</h4></Link>
+            <p class="list-group-item-text">List Group Item Text</p>
+          </li>
+          <li href="#" class="list-group-item  list-group-mine bg-success">
+            <Link to={`/products`}><h4 class="list-group-item-heading text-black-50">Seeds</h4></Link>
+            <p class="list-group-item-text">List Group Item Text</p>
+          </li>
+          <li href="#" class="bg-light-green list-group-item  bg-info  ">
+            <Link to={`/products`}><h4 class="list-group-item-heading text-black-50">Fertilizers</h4></Link>
+            <p class="list-group-item-text">List Group Item Text</p>
+          </li>
+          <li href="#" class="list-group-item  list-group-mine bg-warning">
+            <Link to={`/products`}><h4 class="list-group-item-heading text-black-50">Plants</h4></Link>
+            <p class="list-group-item-text">List Group Item Text</p>
+          </li>
+        </div>
+  </div>
+      
+      
     </div>
   );
 };
