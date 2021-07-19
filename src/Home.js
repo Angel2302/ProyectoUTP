@@ -20,12 +20,12 @@ const Item = () => {
 const Home = () => {
   
   return (
-    <main class="container">
+    <main class="container-sm">
       <Carousel>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Myosotis_sylvatica%2C_Bosvergeet-mij-nietje.jpg"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Detailaufnahme_Weihnachtsstern_-_gro%C3%9F.jpg"
       alt="First slide"
     />
     <Carousel.Caption>
@@ -36,7 +36,7 @@ const Home = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Myosotis_sylvatica%2C_Bosvergeet-mij-nietje.jpg"
+      src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Tricyrtis_hirta_-_blossom_side_%28aka%29.jpg"
       alt="Second slide"
     />
 
