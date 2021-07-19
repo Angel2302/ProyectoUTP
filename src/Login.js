@@ -57,7 +57,12 @@ export default function Login() {
                 <label class="form-check-label" for="form2Example3"> Remember me </label>
               </div>
             </div>
-
+            {/* <!-- Submit button --> */}
+            <div class="col text-center">
+              <button onClick={login} class="btn btn-success regular-button  ">
+              <Link to="/admin" class= "nav-link h5 text-white" >Login</Link>
+              </button>      
+            </div>
             <div class="col">
               {/* <!-- Simple link --> */}
               <a href="/forgot">Forgot password?</a>
@@ -70,35 +75,34 @@ export default function Login() {
           {/* <!-- Register buttons --> */}
           <div class="text-center">
             <p>Not a member? <a href="/formulario">Register</a></p>
-
-            {/* social media buttons ///////////////////////////*/}
-            {/* <p>or sign up with:</p>
+            {/* social media buttons /////////////////////////// */}
+            {/* <p>or sign up with:</p> */}
+           
+            {/* <button type="button" class="btn btn-success btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+            </button>
+            
             <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-google"></i>
             </button>
 
             <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fab fa-google"></i>
+                <i class="fab fa-twitter"></i>
             </button>
 
             <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fab fa-twitter"></i>
-            </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fab fa-github"></i>
+                <i class="fab fa-github"></i>
             </button> */}
+            
+            {/* social media buttons /////////////////////////// */}
+            
           </div>
         </form>
         
       
 
-      {/* <!-- Submit button --> */}
-      <div class="col text-center">
-      <button onClick={login} class="btn btn-success regular-button  ">
-      <Link to="/admin" class= "nav-link h5 text-white" >Login</Link>
-      </button>      
-    			</div>
+      
+      
       
     </div>
   );
