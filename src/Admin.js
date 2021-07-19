@@ -17,7 +17,7 @@ const Admin = () => {
 
   return(
     <div>
-      <h3>hello admin</h3>
+      <h3>Hello admin</h3>
       
     </div>
   );
