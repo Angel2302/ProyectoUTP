@@ -1,0 +1,86 @@
+{
+    "users": [
+        {
+            "id": "user1",
+            "nombre": "user1",
+            "telefono": 0,
+            "email": "user1",
+            "password": "user1"
+        },
+        {
+            "id": "user2",
+            "nombre": "user2",
+            "telefono": 1,
+            "email": "user2",
+            "password": "user2"
+        },
+        {
+            "id": "user3",
+            "nombre": "user3",
+            "telefono": 2,
+            "email": "user3",
+            "password": "user3"
+        },
+        {
+            "id": "user4",
+            "nombre": "user4",
+            "telefono": 3,
+            "email": "user4",
+            "password": "user4"
+        },
+        {
+            "id": "user5",
+            "nombre": "user5",
+            "telefono": 4,
+            "email": "user5",
+            "password": "user5"
+        }
+    ],
+    "products": [
+        {
+            "id": "product1",
+            "nombre": "product1",
+            "categoria": "product1",
+            "funcion": "product1",
+            "color": "Rojo",
+            "peso": 50,
+            "precio": 150000
+        },
+        {
+            "id": "product2",
+            "nombre": "product2",
+            "categoria": "product2",
+            "funcion": "product2",
+            "color": "Rojo",
+            "peso": 50,
+            "precio": 150000
+        },
+        {
+            "id": "product3",
+            "nombre": "product3",
+            "categoria": "product3",
+            "funcion": "product3",
+            "color": "Rojo",
+            "peso": 50,
+            "precio": 150000
+        },
+        {
+            "id": "product4",
+            "nombre": "product4",
+            "categoria": "product4",
+            "funcion": "product4",
+            "color": "Rojo",
+            "peso": 50,
+            "precio": 150000
+        },
+        {
+            "id": "product5",
+            "nombre": "product5",
+            "categoria": "product5",
+            "funcion": "product5",
+            "color": "Rojo",
+            "peso": 50,
+            "precio": 150000
+        }
+    ]
+}
