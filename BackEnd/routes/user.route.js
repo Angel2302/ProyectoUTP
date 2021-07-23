@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const registroPrueba = require('../database/registros.prueba.json');
+let registroPrueba = require('../database/registros.prueba.json');
 
 const router = express.Router();
 
@@ -19,17 +19,28 @@ router.get('/list-users', (req, res) => {
 
 router.put('/update-user/:id', (req, res) => {
     let id = req.params.id;
+    let form = req.body;
     console.log(id);
-    res.status(200).send({
-        message: "Update-user router"
+    registroPrueba.users.forEach(async (element, index) => {
+        if(element.id == id){
+            await registroPrueba.users.splice(index,1, form)
+            res.status(200).send({
+                message: "Update-user router"
+            });
+        }
     });
 });
 
 router.delete('/delete-user/:id', (req, res) => {
     let id = req.params.id;
     console.log(id);
-    res.status(200).send({
-        message: "Delete-user router"
+    registroPrueba.users.forEach((element, index) => {
+        if(element.id == id){
+            registroPrueba.users.splice(index,1)
+            res.status(200).send({
+                message: "Delete-user router"
+            });
+        }
     });
 });
 
