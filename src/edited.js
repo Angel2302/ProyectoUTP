@@ -1,29 +1,3 @@
-
-// import React from "react";
-// import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
-
-// const Item = () => {
-//   const { name } = useParams();
-
-//   return (
-//     <div>
-//       <h3>{name}</h3>
-//     </div>
-//   );
-// };
-
-// const Admin = () => {
-//   const { url, path } = useRouteMatch();
-
-//   return(
-//     <div>
-//       <h3>Hello admin</h3>
-      
-//     </div>
-//   );
-// };
-
-// export default Admin;
 import { even } from 'prelude-ls';
 import React, {Fragment, useState} from 'react';
 import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
@@ -110,7 +84,7 @@ const Formulario = () => {
                 <div class='row mt-3'>
                     <div class='col-4'>
                         <input
-                            placeholder="Color"
+                            placeholder="-color"
                             className="form-control"
                             type="text"
                             Color="Color"
@@ -138,27 +112,23 @@ const Formulario = () => {
                 </div>
                 
                 <div class='row center mt-3'>
-                    <div class='col-3 '>
-                        <button class="btn btn-secondary  mb-4">
-                        <Link to="/login" class= "nav-link h5" >Search</Link>
+                    <div class='col-3 center'>
+                        <button class="btn btn-success btn-block mb-4">
+                        <Link to="/login" class= "nav-link h5" >send</Link>
                         </button>
                     </div>
-                    <div class='col-3 '>
-                        <button class="btn btn-success  mb-4">
-                        <Link to="/login" class= "nav-link h5" >Add</Link>
+                    <div class='col-3 center'>
+                        <button class="btn btn-success btn-block mb-4">
+                        <Link to="/login" class= "nav-link h5" >send</Link>
+                        </button>
+                    </div><div class='col-3 center'>
+                        <button class="btn btn-success btn-block mb-4">
+                        <Link to="/login" class= "nav-link h5" >send</Link>
                         </button>
                     </div>
-                    <div class='col-3 '>
-                        <button class="btn btn-warning  mb-4">
-                        <Link to="/login" class= "nav-link h5" >Edit</Link>
-                        </button>
-                    </div><div class='col-3 '>
-                        <button class="btn btn-danger  mb-4">
-                        <Link to="/login" class= "nav-link h5" >Delete</Link>
-                        </button>
-                    </div>               
                     
                 </div>
+
             </form>
         </Fragment>
         </div>
