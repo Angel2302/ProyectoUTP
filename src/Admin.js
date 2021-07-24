@@ -24,9 +24,28 @@
 // };
 
 // export default Admin;
+import { message } from 'antd';
 import { even } from 'prelude-ls';
 import React, {Fragment, useState} from 'react';
 import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
+
+
+function Search() {
+    alert('Seach OK');
+    
+}
+function Add() {
+    alert('Add successful');
+    
+}
+function Edit() {
+    alert('edit successful');
+    
+}
+function Delete() {
+    alert('Delete successful');
+    
+}
 
  const Item = () => {
      const { name } = useParams();
@@ -139,22 +158,22 @@ const Formulario = () => {
                 
                 <div class='row center mt-3'>
                     <div class='col-3 '>
-                        <button class="btn btn-secondary  mb-4">
-                        <Link to="/login" class= "nav-link h5" >Search</Link>
+                        <button class="btn btn-secondary  mb-4" onClick={Search}>
+                        <Link to="/Admin" class= "nav-link h5" >Search</Link>
                         </button>
                     </div>
                     <div class='col-3 '>
-                        <button class="btn btn-success  mb-4">
-                        <Link to="/login" class= "nav-link h5" >Add</Link>
+                        <button class="btn btn-success  mb-4" onClick={Add}>
+                        <Link to="/Admin" class= "nav-link h5" >Add</Link>
                         </button>
                     </div>
                     <div class='col-3 '>
-                        <button class="btn btn-warning  mb-4">
-                        <Link to="/login" class= "nav-link h5" >Edit</Link>
+                        <button class="btn btn-warning  mb-4" onClick={Edit}>
+                        <Link to="/Admin" class= "nav-link h5" >Edit</Link>
                         </button>
                     </div><div class='col-3 '>
-                        <button class="btn btn-danger  mb-4">
-                        <Link to="/login" class= "nav-link h5" >Delete</Link>
+                        <button class="btn btn-danger  mb-4" onClick={Delete}>
+                        <Link to="/Admin" class= "nav-link h5" >Delete</Link>
                         </button>
                     </div>               
                     
