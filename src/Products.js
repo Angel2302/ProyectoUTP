@@ -1,80 +1,64 @@
 // src/Products.js
 
-import React from "react";
-import { Link, Route, useRouteMatch } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
 import Product from "./Product";
 // import Product from "./product";
 
-const Products = ({ match }) => {
-    const productData = [
-        {
-          id: 1,
-          name: "Product 1",
-          description:
-            "Lorem Ipsum is simply dummy",
-          status: "Sold out",
-        },
-        {
-          id: 2,
-          name: "Product 2",
-          description:
-            "Lorem Ipsum is simply dummy",
-          status: "Sold out",
-        },
-        {
-          id: 3,
-          name: "Product 3",
-          description:
-            "Lorem Ipsum is simply dummy",
-          status: "Sold out",
-        },
-        {
-          id: 4,
-          name: "Product 4",
-          description:
-            "Lorem Ipsum is simply dummy",
-          status: "Sold out",
-        },
-        {
-          id: 5,
-          name: "Product 5",
-          description:
-            "Lorem Ipsum is simply dummy",
-          status: "Sold out",
-        },
-      ];
+import axios from "axios";
+
+const Products = () => {
+
+  const[productData, setProductData] = useState({
+    products: [],
+    responseBool: false
+  });
+  console.log(useParams());
+  
+  axios.post('/products/filter-products',
+      useParams()
+    ).then(res => {
+      if(!productData.responseBool){
+        console.log(res.data)
+        setProductData({
+          products: res.data,
+          responseBool: true
+        });
+      }
+        
+    }).catch(error => {
+      console.log(error);
+    });
 
   const { url } = useRouteMatch();    
   
 
   /* Create an array of `<li>` items for each member */
-  const linkList = productData.map((product) => {
+  const linkList = productData.products.map((product) => {
+    console.log(product)
     return (
       <li key={product.id}>
-        <Link class= "h5" to={`${url}/${product.id}`}>{product.name}</Link>
+        <Link className= "h5" to={`${url}/${product.id}`}>{product.Nombre}</Link>
       </li>
     );
   });
 
-  return (
-    <div class= "container">
-      <div class= "row">
-        <div class= "col" >
+    return (
+    <div className= "container">
+      <div className= "row">
+        <div className= "col" >
           <h3>Products</h3>
           <ul>{linkList}</ul>
         </div>
-        <div class= "col">
+        <div className= "col">
           <Route path={`${url}/:productId`}>
-            <Product data={productData} />
+            <Product data={productData.products} />
           </Route>
           <Route exact path={url}>
             <p>To know more about our products Please select one.</p>
           </Route>
+        </div>
       </div>
-      </div>
-      
-
-     
     </div>
   );
 };

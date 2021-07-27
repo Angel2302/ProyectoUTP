@@ -1,4 +1,3 @@
-
 // import React from "react";
 // import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
 
@@ -29,25 +28,9 @@ import { even } from 'prelude-ls';
 import React, {Fragment, useState} from 'react';
 import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
 
+import axios from 'axios';
 
-function Search() {
-    alert('Seach OK');
-    
-}
-function Add() {
-    alert('Add successful');
-    
-}
-function Edit() {
-    alert('edit successful');
-    
-}
-function Delete() {
-    alert('Delete successful');
-    
-}
-
- const Item = () => {
+const Item = () => {
      const { name } = useParams();
     return (
         <div>
@@ -60,7 +43,8 @@ function Delete() {
 const Formulario = () => {
 
     const[datos, setDatos] = useState({
-        Name:'',
+        id: '',
+        Nombre:'',
         Category:'',
         Funcion: '',
         Weight: '',
@@ -71,7 +55,7 @@ const Formulario = () => {
     const handleInputChange =(event) => {
         setDatos({
             ...datos,
-            [even.target.name] : event.target.value 
+            [event.target.name] : event.target.value 
         })
     }
 
@@ -79,101 +63,166 @@ const Formulario = () => {
         event.preventDefault();
     }
 
+    function Search() {
+        axios.post('/products/search-product',
+            datos
+        ).then(res => {
+            setDatos(res.data);
+            console.log(res.data);
+        }).catch(error => {
+            console.log(error)
+        });
+        alert('Seach OK');
+    }
+    function Add() {
+        axios.post('/products/add-product',
+            datos
+        ).then(res => {
+            setDatos({
+                id: '',
+                Nombre:'',
+                Category:'',
+                Funcion: '',
+                Weight: '',
+                Color: '',
+                Price: '',
+            });
+            console.log(res.data.message);
+        }).catch(error => {
+            console.log(error);
+        });
+        alert('Add successful');
+    }
+    function Edit() {
+        axios.put(`/products/update-product/${datos.id}`,
+            datos
+        ).then(res => {
+            setDatos(res.data);
+            console.log(res.data);
+        }).catch(error => {
+            console.log(error);
+        });
+        alert('edit successful');
+    }
+    function Delete() {
+        axios.delete(`/products/delete-product/${datos.id}`).then(res => {
+            setDatos({
+                id: '',
+                Nombre:'',
+                Category:'',
+                Funcion: '',
+                Weight: '',
+                Color: '',
+                Price: '',
+            });
+        }).catch(error => {
+            console.log(error)
+        });
+        alert('Delete successful');
+    }
+
     return (
-        <div class=" center m-4">
+        <div className=" center m-4">
         <Fragment>
             <h3>Edition Product</h3>
-            <form class='container' onSubmit={sendDatos}>
-                <div class='row'>
-                    <div class='col-4'>
+            <form className='container' onSubmit={sendDatos}>
+                <div className='row'>
+                    <div className='col-4'>
                         <input
                             placeholder="Id"
                             className="form-control"
                             type="number"
-                            ID="id"
-                            omChange={handleInputChange}
+                            name="id"
+                            value={ datos.id }
+                            onChange={handleInputChange}
                         ></input>
                     </div>
-                    <div class='col-6'>
+                    <div className='col-6'>
                         <input
                             placeholder="Name"
                             className="form-control"
                             type="text"
-                            name="Name"
-                            omChange={handleInputChange}
+                            name="Nombre"
+                            value={ datos.Nombre }
+                            onChange={handleInputChange}
                         ></input>
                     </div>
                     
                 </div>
-                <div class='row mt-2'>
-                    
-                    <div class='col-6'>
+                <div className='row mt-2'>
+                    <div className='col-6'>
                         <input
                             placeholder="Category"
                             className="form-control"
                             type="text"
-                            Category="Category"
-                            omChange={handleInputChange}
+                            name="Category"
+                            value={ datos.Category }
+                            onChange={handleInputChange}
                         ></input>
                     </div>
-                    <div class='col-6'>
+                    <div className='col-6'>
                         <input
                             placeholder="Funcion"
                             className="form-control"
                             type="text"
-                            Funcion="Funcion"
-                            omChange={handleInputChange}
+                            name="Funcion"
+                            value={ datos.Funcion }
+                            onChange={handleInputChange}
                         ></input>
                     </div>
                 </div>
-                <div class='row mt-3'>
-                    <div class='col-4'>
+                <div className='row mt-3'>
+                    <div className='col-4'>
                         <input
                             placeholder="Color"
                             className="form-control"
                             type="text"
-                            Color="Color"
-                            omChange={handleInputChange}
+                            name="Color"
+                            value={ datos.Color }
+                            onChange={handleInputChange}
                         ></input>
                     </div>
-                    <div class='col-4'>
+                    <div className='col-4'>
                         <input
                             placeholder="Weight"
                             className="form-control"
                             type="number"
-                            Weight="weight"
-                            omChange={handleInputChange}
+                            name="Weight"
+                            value={ datos.Weight }
+                            onChange={handleInputChange}
                         ></input>
                     </div>
-                    <div class='col-4'>
+                    <div className='col-4'>
                         <input
                             placeholder="Price"
                             className="form-control"
                             type="number"
-                            Price="Price"
-                            omChange={handleInputChange}
+                            name="Price"
+                            value={ datos.Price }
+                            onChange={handleInputChange}
                         ></input>
                     </div>
                 </div>
                 
-                <div class='row center mt-3'>
-                    <div class='col-3 '>
-                        <button class="btn btn-secondary  mb-4" onClick={Search}>
-                        <Link to="/Admin" class= "nav-link h5" >Search</Link>
+                <div className='row center mt-3'>
+                    <div className='col-3 '>
+                        <button className="btn btn-secondary  mb-4" onClick={Search}>
+                        <Link to="/Admin" className= "nav-link h5" >Search</Link>
                         </button>
                     </div>
-                    <div class='col-3 '>
-                        <button class="btn btn-success  mb-4" onClick={Add}>
-                        <Link to="/Admin" class= "nav-link h5" >Add</Link>
+                    <div className='col-3 '>
+                        <button className="btn btn-success  mb-4" onClick={Add}>
+                        <Link to="/Admin" className= "nav-link h5" >Add</Link>
                         </button>
                     </div>
-                    <div class='col-3 '>
-                        <button class="btn btn-warning  mb-4" onClick={Edit}>
-                        <Link to="/Admin" class= "nav-link h5" >Edit</Link>
+                    <div className='col-3 '>
+                        <button className="btn btn-warning  mb-4" onClick={Edit}>
+                        <Link to="/Admin" className= "nav-link h5" >Edit</Link>
                         </button>
-                    </div><div class='col-3 '>
-                        <button class="btn btn-danger  mb-4" onClick={Delete}>
-                        <Link to="/Admin" class= "nav-link h5" >Delete</Link>
+                    </div>
+                    <div className='col-3 '>
+                        <button className="btn btn-danger  mb-4" onClick={Delete}>
+                        <Link to="/Admin" className= "nav-link h5" >Delete</Link>
                         </button>
                     </div>               
                     

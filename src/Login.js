@@ -1,69 +1,101 @@
-// src/Login.js
-
 import React, { useState } from "react";
+import { Link, Route, Redirect, useLocation } from "react-router-dom"; 
 
-import { Link, Route, Redirect, useLocation } from "react-router-dom";
-
+import axios from "axios";
 
 export default function Login() {
+
   const { state } = useLocation();
   const { from } = state || { from: { pathname: "/" } };
-  const [redirectToReferrer, setRedirectToReferrer] = useState(true);
+  const [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
-  const login = () => {
-    fakeAuth.authenticate(() => {
-      setRedirectToReferrer(false);
+  const[datos, setDatos] = useState({
+    Username: "",
+    Password: ""
+  })
+
+  function login() {
+    axios.post('/users/login',
+      datos
+    ).then(res => {
+      if(!res.data.message) {
+        console.log(res.data);
+        fakeAuth.authenticate(() => {
+          setRedirectToReferrer(true);
+        });
+      } else {
+        alert(res.data.message)
+        console.log(res.data.message)
+      }
+    }).catch(error => {
+      console.log(error);
     });
   };
 
-  if (!redirectToReferrer) { 
-    
-    return  <Redirect to={from} />;
-        
+  const handleInputChange =(event) => {
+    setDatos({
+      ...datos,
+      [event.target.name] : event.target.value 
+    })
   }
 
+  if (redirectToReferrer) { 
+    console.log(redirectToReferrer);
+    return  <Redirect to={from} />;
+  } 
+
   return (
-    <div class= "container ">
+    <div className= "container ">
         {/* login-form */}
         <div>
         <h3>You must log in to view the page at {from.pathname}</h3>
         </div>
 
-        <form class= "container sm">
+        <form className= "container sm">
           {/* <!-- Email input --> */}
-          <div class="form-outline mb-4">
-            <input type="email" id="form2Example1" class="form-control" />
-            <label class="form-label h5" for="form2Example1">Username</label>
+          <div className="form-outline mb-4">
+            <input 
+              type="email" 
+              id="form2Example1" 
+              className="form-control"
+              onChange={ handleInputChange }
+              name="Username" />
+            <label className="form-label h5">Username</label>
           </div>
 
           {/* <!-- Password input --> */}
-          <div class="form-outline mb-4">
-            <input type="password" id="form2Example2" class="form-control" />
-            <label class="form-label h5" for="form2Example2">Password</label>
+          <div className="form-outline mb-4">
+            <input 
+              type="password" 
+              id="form2Example2" 
+              className="form-control"
+              onChange={ handleInputChange }
+              name="Password" />
+            <label className="form-label h5">Password</label>
           </div>
 
           {/* <!-- 2 column grid layout for inline styling --> */}
-          <div class="row mb-4">
-            <div class="col d-flex justify-content-center">
+          <div className="row mb-4">
+            <div className="col d-flex justify-content-center">
               {/* <!-- Checkbox --> */}
-              <div class="form-check">
+              <div className="form-check">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="checkbox"
                   value=""
                   id="form2Example3"
-                  unchecked
+                  unchecked="true"
                 />
-                <label class="form-check-label" for="form2Example3"> Remember me </label>
+                <label className="form-check-label"> Remember me </label>
               </div>
             </div>
             {/* <!-- Submit button --> */}
-            <div class="col text-center">
-              <button onClick={login} class="btn btn-success regular-button  ">
-              <Link to="/admin" class= "nav-link h5 text-white" >Login</Link>
+            <div className="col text-center">
+              <button onClick={login} className="btn btn-success regular-button">
+                <Link to="/admin" className= "nav-link h5 text-white" >Login</Link>
               </button>      
             </div>
-            <div class="col">
+            <div className="col">
               {/* <!-- Simple link --> */}
               <a href="/forgot">Forgot password?</a>
             </div>
@@ -73,7 +105,7 @@ export default function Login() {
           
 
           {/* <!-- Register buttons --> */}
-          <div class="text-center">
+          <div className="text-center">
             <p>Not a member? <a href="/formulario">Register</a></p>
             {/* social media buttons /////////////////////////// */}
             {/* <p>or sign up with:</p> */}
@@ -98,12 +130,6 @@ export default function Login() {
             
           </div>
         </form>
-        
-      
-
-      
-      
-      
     </div>
   );
 }
@@ -114,6 +140,5 @@ export const fakeAuth = {
   authenticate(cb) {
     this.isAuthenticated = true;
     setTimeout(cb, 100);
-    
   }
 };

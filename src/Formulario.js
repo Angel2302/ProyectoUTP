@@ -1,16 +1,7 @@
-import { even } from 'prelude-ls';
 import React, {Fragment, useState} from 'react';
 import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
 
- const Item = () => {
-     const { name } = useParams();
-    return (
-        <div>
-        <h3>{name}</h3>
-        </div>
-    );
-};
-  
+import axios from 'axios';
 
 const Formulario = () => {
 
@@ -19,13 +10,14 @@ const Formulario = () => {
         Lastname:'',
         Username: '',
         Email: '',
-        Password: ''
+        Password: '',
+        ConfirmPassword: ''
     })
 
     const handleInputChange =(event) => {
         setDatos({
             ...datos,
-            [even.target.name] : event.target.value 
+            [event.target.name] : event.target.value 
         })
     }
 
@@ -33,73 +25,84 @@ const Formulario = () => {
         event.preventDefault();
     }
 
+    function register() {
+        axios.post('/users/add-user', 
+            datos
+        ).then(res => {
+            console.log(res.data.message);
+        }).catch(error => {
+            console.log(error);
+        });
+        alert('Add-User');
+    }
+
     return (
-        <div class="m-4">
+        <div className="m-4">
         <Fragment>
             <h3>Registration Form</h3>
-            <form class='container' onSubmit={sendDatos}>
-                <div class='row'>
+            <form className='container' onSubmit={sendDatos}>
+                <div className='row'>
                     <input
                             placeholder="Email"
                             className="form-control"
                             type="email"
-                            Email="Email"
-                            omChange={handleInputChange}
+                            name="Email"
+                            onChange={handleInputChange}
                         ></input>
                 </div>
-                <div class='row mt-2'>
-                    <div class='col-4'>
+                <div className='row mt-2'>
+                    <div className='col-4'>
                         <input
                             placeholder="Name"
                             className="form-control"
                             type="text"
                             name="Name"
-                            omChange={handleInputChange}
+                            onChange={handleInputChange}
                         ></input>
                     </div>
-                    <div class='col-4'>
+                    <div className='col-4'>
                         <input
                             placeholder="Lastname"
                             className="form-control"
                             type="text"
-                            Lastname="Lastname"
-                            omChange={handleInputChange}
+                            name="Lastname"
+                            onChange={handleInputChange}
                         ></input>
                     </div>
-                    <div class='col-4'>
+                    <div className='col-4'>
                         <input
                             placeholder="Username"
                             className="form-control"
                             type="text"
-                            Username="Username"
-                            omChange={handleInputChange}
+                            name="Username"
+                            onChange={handleInputChange}
                         ></input>
                     </div>
                 </div>
-                <div class='row mt-3'>
-                    <div class='col-6'>
+                <div className='row mt-3'>
+                    <div className='col-6'>
                         <input
                             placeholder="password"
                             className="form-control"
-                            type="text"
-                            Passworde="passworde"
-                            omChange={handleInputChange}
+                            type="password"
+                            name="Password"
+                            onChange={handleInputChange}
                         ></input>
                     </div>
-                    <div class='col-6'>
+                    <div className='col-6'>
                         <input
                             placeholder="confirm password"
                             className="form-control"
-                            type="text"
-                            Username="Username"
-                            omChange={handleInputChange}
+                            type="password"
+                            name="ConfirmPassword"
+                            onChange={handleInputChange}
                         ></input>
                     </div>
                 </div>
                 
-                <div class='mt-3'>
-                    <button class="btn btn-success btn-block mb-4">
-                    <Link to="/login" class= "nav-link h5" >send</Link>
+                <div className='mt-3'>
+                    <button onClick={ register } className="btn btn-success btn-block mb-4">
+                        <Link to="/login" className= "nav-link h5" >send</Link>
                     </button>
                 </div>
 
