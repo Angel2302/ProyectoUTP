@@ -75,6 +75,26 @@ const Formulario = () => {
         alert('Seach OK');
     }
     function Add() {
+        var vacio = 0;
+        if(datos.id === ''){
+            alert('id empty field');
+            vacio = 1;
+        }
+            else if(datos.Nombre === ''){
+                alert('empty field');
+                vacio = 1;
+            }
+            else if(datos.Category === ''){
+                alert('Category empty field');
+                vacio = 1;
+            }
+            else if(datos.Funcion === ''){
+                alert('Function empty field');
+                vacio = 1;
+            }
+        else if (!vacio)
+        {
+           
         axios.post('/products/add-product',
             datos
         ).then(res => {
@@ -92,6 +112,9 @@ const Formulario = () => {
             console.log(error);
         });
         alert('Add successful');
+        }
+        
+        
     }
     function Edit() {
         axios.put(`/products/update-product/${datos.id}`,
