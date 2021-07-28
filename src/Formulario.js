@@ -40,7 +40,7 @@ const Formulario = () => {
     <div class= "container justify-content-center" onSubmit={sendDatos}>
         <form>
                 <div class="container text-center">
-                <h3 >Sign Up</h3>
+                <h2 >Registration Form</h2>
                 </div>
                 <div className="form-group">
                     <label>First name</label>
@@ -61,13 +61,11 @@ const Formulario = () => {
                     <label>Password</label>
                     <input type="password" className="form-control" placeholder="Enter password" />
                 </div>
-
+                <div class="col text-center">
                 <button onClick={ register } className="btn btn-success regular-button">
-                        <Link to="/login" className= "nav-link text-light " >Sign in</Link>
+                        <Link to="/login" className= "nav-link text-light " >Sign up</Link>
                 </button>
-                <p className="forgot-password text-right">
-                    Already registered <a href="#">sign in?</a>
-                </p>
+                </div>
             </form>
 
         
