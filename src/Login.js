@@ -45,7 +45,7 @@ export default function Login() {
   } 
 
   return (
-    <div className= "container ">
+    <div className= "container justify-content-center ">
         {/* login-form */}
         <div>
         <h3>You must log in to view the page at {from.pathname}</h3>
