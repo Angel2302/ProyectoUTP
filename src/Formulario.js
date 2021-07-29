@@ -37,37 +37,42 @@ const Formulario = () => {
     }
 
     return (
-    <div class= "container justify-content-center" onSubmit={sendDatos}>
-        <form>
-                <div class="container text-center">
-                <h2 >Registration Form</h2>
-                </div>
-                <div className="form-group">
-                    <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" onChange={handleInputChange} />
-                </div> 
+    <div class= "container justify-content-center" >
+        <Fragment>
+            <form className='container' onSubmit={sendDatos}>
+                    <div class="container text-center">
+                    <h2 >Registration Form</h2>
+                    <div className="form-group">
+                    </div>
+                        <label>First name</label>
+                        <input type="text" className="form-control" placeholder="First name" onChange={handleInputChange} />
+                    </div> 
 
-                <div className="form-group">
-                    <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" onChange={handleInputChange} />
-                </div>
+                    <div className="form-group">
+                        <label>Last name</label>
+                        <input type="text" className="form-control" placeholder="Last name" onChange={handleInputChange} />
+                    </div>
 
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" onChange={handleInputChange} />
-                </div>
+                    <div className="form-group">
+                        <label>Email address</label>
+                        <input type="email" className="form-control" placeholder="Enter email" onChange={handleInputChange} />
+                    </div>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
-                <div class="col text-center">
-                <button onClick={ register } className="btn btn-success regular-button">
-                        <Link to="/login" className= "nav-link text-light " >Sign up</Link>
-                </button>
-                </div>
-            </form>
-
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input type="password" className="form-control" placeholder="Enter password" onChange={handleInputChange}/>
+                    </div>
+                    <div className="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" className="form-control" placeholder="Enter password" onChange={handleInputChange}/>
+                    </div>
+                    <div class="col text-center">
+                    <button onClick={ register } className="btn btn-success regular-button">
+                            <Link to="/login" className= "nav-link text-light " >Sign up</Link>
+                    </button>
+                    </div>
+                </form> 
+            </Fragment>
         
         {/* <div className="m-4">
         <Fragment>
