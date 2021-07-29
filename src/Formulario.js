@@ -38,19 +38,33 @@ const Formulario = () => {
 
     return (
     <div class= "container justify-content-center" >
-       {/*  <Fragment>
+        {/* <Fragment>
             <form className='container' onSubmit={sendDatos}>
                     <div class="container text-center">
                     <h2 >Registration Form</h2>
                     <div className="form-group">
                     </div>
                         <label>First name</label>
-                        <input type="text" className="form-control" placeholder="First name" onChange={handleInputChange} />
+                        <input type="text"
+                         className="form-control" 
+                         placeholder="First name" 
+                         onChange={handleInputChange} />
                     </div> 
 
                     <div className="form-group">
                         <label>Last name</label>
-                        <input type="text" className="form-control" placeholder="Last name" onChange={handleInputChange} />
+                        <input type="text" 
+                        className="form-control" 
+                        placeholder="Last name" 
+                        onChange={handleInputChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Username</label>
+                        <input 
+                        type="text" 
+                        className="form-control" 
+                        placeholder="Last name" 
+                        onChange={handleInputChange} />
                     </div>
 
                     <div className="form-group">
@@ -87,8 +101,8 @@ const Formulario = () => {
                             onChange={handleInputChange}
                         ></input>
                 </div>
-                <div className='row mt-2'>
-                    <div className='col-4'>
+                <div className='row mt-2 '>
+                    
                         <input
                             placeholder="Name"
                             className="form-control"
@@ -96,8 +110,8 @@ const Formulario = () => {
                             name="Name"
                             onChange={handleInputChange}
                         ></input>
-                    </div>
-                    <div className='col-4'>
+                </div>    
+                <div className='row mt-2'>
                         <input
                             placeholder="Lastname"
                             className="form-control"
@@ -105,8 +119,8 @@ const Formulario = () => {
                             name="Lastname"
                             onChange={handleInputChange}
                         ></input>
-                    </div>
-                    <div className='col-4'>
+                </div>
+                <div className='row mt-2'>
                         <input
                             placeholder="Username"
                             className="form-control"
@@ -114,8 +128,8 @@ const Formulario = () => {
                             name="Username"
                             onChange={handleInputChange}
                         ></input>
-                    </div>
                 </div>
+               
                 <div className='row mt-3'>
                     <div className='col-6'>
                         <input
@@ -137,9 +151,9 @@ const Formulario = () => {
                     </div>
                 </div>
                 
-                <div className='mt-3'>
-                    <button onClick={ register } className="btn btn-success btn-block mb-4">
-                        <Link to="/login" className= "nav-link h5" >send</Link>
+                <div className='col text-center mt-3'>
+                    <button onClick={ register } className="btn-success regular-button">
+                        <Link to="/login" className= "nav-link text-light h5" >Sign up</Link>
                     </button>
                 </div>
 
