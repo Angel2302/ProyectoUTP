@@ -38,7 +38,7 @@ const Formulario = () => {
 
     return (
     <div class= "container justify-content-center" >
-        <Fragment>
+       {/*  <Fragment>
             <form className='container' onSubmit={sendDatos}>
                     <div class="container text-center">
                     <h2 >Registration Form</h2>
@@ -72,9 +72,9 @@ const Formulario = () => {
                     </button>
                     </div>
                 </form> 
-            </Fragment>
+            </Fragment> */}
         
-        {/* <div className="m-4">
+        <div className="m-4">
         <Fragment>
             <h3>Registration Form</h3>
             <form className='container' onSubmit={sendDatos}>
@@ -145,7 +145,7 @@ const Formulario = () => {
 
             </form>
         </Fragment>
-        </div> */}
+        </div>
     </div>
     );
 }
