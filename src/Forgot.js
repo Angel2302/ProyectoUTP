@@ -46,8 +46,8 @@ const Forgot = () => {
                         ></input>
                 </div>            
                 <div class='mt-3'>
-                    <button class="btn btn-success btn-block mb-4">
-                    <Link to="/login" class= "nav-link h5" >Send recover password</Link>
+                    <button class="btn btn-success regular-button">
+                    <Link to="/login" class= "nav-link text-light" >Recover password</Link>
                     </button>
                 </div>
 

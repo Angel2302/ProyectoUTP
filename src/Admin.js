@@ -150,7 +150,7 @@ const Formulario = () => {
             <h3>Edition Product</h3>
             <form className='container' onSubmit={sendDatos}>
                 <div className='row'>
-                    <div className='col-4'>
+                    <div className='col-6'>
                         <input
                             placeholder="Id"
                             className="form-control"
@@ -229,23 +229,23 @@ const Formulario = () => {
                 
                 <div className='row center mt-3'>
                     <div className='col-3 '>
-                        <button className="btn btn-secondary  mb-4" onClick={Search}>
-                        <Link to="/Admin" className= "nav-link h5" >Search</Link>
+                        <button className="btn btn-success  mb-4" onClick={Search}>
+                        <Link to="/Admin" className= "nav-link text-light" >Search</Link>
                         </button>
                     </div>
                     <div className='col-3 '>
                         <button className="btn btn-success  mb-4" onClick={Add}>
-                        <Link to="/Admin" className= "nav-link h5" >Add</Link>
+                        <Link to="/Admin" className= "nav-link text-light" >Add</Link>
                         </button>
                     </div>
                     <div className='col-3 '>
-                        <button className="btn btn-warning  mb-4" onClick={Edit}>
-                        <Link to="/Admin" className= "nav-link h5" >Edit</Link>
+                        <button className="btn btn-success  mb-4" onClick={Edit}>
+                        <Link to="/Admin" className= "nav-link text-light" >Edit</Link>
                         </button>
                     </div>
                     <div className='col-3 '>
-                        <button className="btn btn-danger  mb-4" onClick={Delete}>
-                        <Link to="/Admin" className= "nav-link h5" >Delete</Link>
+                        <button className="btn btn-success  mb-4" onClick={Delete}>
+                        <Link to="/Admin" className= "nav-link text-light" >Delete</Link>
                         </button>
                     </div>               
                     
