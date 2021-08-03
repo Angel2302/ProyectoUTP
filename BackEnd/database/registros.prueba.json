@@ -38,49 +38,49 @@
     ],
     "products": [
         {
-            "id": "product1",
-            "nombre": "product1",
-            "categoria": "product1",
-            "funcion": "product1",
-            "color": "Rojo",
-            "peso": 50,
-            "precio": 150000
+            "id": 1,
+            "Nombre": "product1",
+            "Category": "tools",
+            "Funcion": "product1",
+            "Color": "Rojo",
+            "Weight": 50,
+            "Price": 150000
         },
         {
-            "id": "product2",
-            "nombre": "product2",
-            "categoria": "product2",
-            "funcion": "product2",
-            "color": "Rojo",
-            "peso": 50,
-            "precio": 150000
+            "id": 2,
+            "Nombre": "product2",
+            "Category": "seeds",
+            "Funcion": "product2",
+            "Color": "Rojo",
+            "Weight": 50,
+            "Price": 150000
         },
         {
-            "id": "product3",
-            "nombre": "product3",
-            "categoria": "product3",
-            "funcion": "product3",
-            "color": "Rojo",
-            "peso": 50,
-            "precio": 150000
+            "id": 3,
+            "Nombre": "product3",
+            "Category": "fertilizers",
+            "Funcion": "product3",
+            "Color": "Rojo",
+            "Weight": 50,
+            "Price": 150000
         },
         {
-            "id": "product4",
-            "nombre": "product4",
-            "categoria": "product4",
-            "funcion": "product4",
-            "color": "Rojo",
-            "peso": 50,
-            "precio": 150000
+            "id": 4,
+            "Nombre": "product4",
+            "Category": "plants",
+            "Funcion": "product4",
+            "Color": "Rojo",
+            "Weight": 50,
+            "Price": 150000
         },
         {
-            "id": "product5",
-            "nombre": "product5",
-            "categoria": "product5",
-            "funcion": "product5",
-            "color": "Rojo",
-            "peso": 50,
-            "precio": 150000
+            "id": 5,
+            "Nombre": "product5",
+            "Category": "tools",
+            "Funcion": "product5",
+            "Color": "Rojo",
+            "Weight": 50,
+            "Price": 150000
         }
     ]
 }

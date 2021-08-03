@@ -6,8 +6,11 @@ let userSchema = new Schema(
         nombre: {
             type: String,
         },
-        telefono: {
-            type: Number,
+        apellidos: {
+            type: String,
+        },
+        nombreUsuario: {
+            type: String,
         },
         email: {
             type: String,
