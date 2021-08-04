@@ -1,7 +1,7 @@
 const express = require('express');
-const mongoose = require('mongoose');
-let registroPrueba = require('../database/registros.prueba.json');
+const bcrypt = require('bcrypt');
 const userSchema = require('../models/Users');
+const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 
@@ -13,10 +13,20 @@ router.post('/add-user', (req, res) => {
             userSchema.findOne({email: form.email}, (err, data) => {
                 if(!err) {
                     if(!data){  
-                        userSchema.create(form, (err,data) => {
-                            if(!err) {
-                                console.log(data);
-                                res.status(200).json(data);
+                        bcrypt.hash(form.password, 10, (err, hash) => {
+                            if(!err){
+                                form.password = hash;
+                                userSchema.create(form, (err,data) => {
+                                    if(!err) {
+                                        console.log(data);
+                                        res.status(200).json(data);
+                                    } else {
+                                        console.log(err);
+                                        res.send({
+                                            message: `[ERROR]: ${err}`
+                                        }).status(500);
+                                    }
+                                });
                             } else {
                                 console.log(err);
                                 res.send({
@@ -48,7 +58,6 @@ router.post('/add-user', (req, res) => {
         }).status(400);
     }
 });
-
 
 router.get('/list-users', (req, res) => {
     userSchema.find((err, data) => {
@@ -123,31 +132,65 @@ router.delete('/delete-user/:id', (req, res) => {
     }
 });
 
-
 router.post('/login', (req, res) => {
     let form = req.body;
     let filter = {};
     if(form.username != '' && form.password != ''){
         if(form.username.indexOf('@') != -1){
             filter = {
-                email: form.username,
-                password: form.password
+                email: form.username
             } 
         } else {
             filter = {
-                nombreUsuario: form.username,
-                password: form.password
+                nombreUsuario: form.username
             } 
         }
         userSchema.findOne(filter, (err, data) => {
             if(!err){
                 if(data){
-                    console.log(data);
-                    res.status(200).json(data);
+                    bcrypt.compare(form.password, data.password, (err, result) => {
+                        if(!err){
+                            if(result) {
+                                const payload = {
+                                    id: data._id,
+                                    nombre: data.nombre
+                                }
+                                jwt.sign(payload , 'secretKeyJWT', {
+                                    expiresIn: 300
+                                }, (err, token) => {
+                                    if(!err){
+                                        console.log({
+                                            auth: true,
+                                            token
+                                        });
+                                        res.status(200).json({
+                                            auth: true,
+                                            token
+                                        });
+                                    } else {
+                                        console.log(err);
+                                        res.send({
+                                            message: `[ERROR]: ${err}`
+                                        }).status(500);
+                                    }
+                                });
+                            } else {
+                                console.log('Incorrect Password');
+                                res.send({
+                                    message: 'Incorrect Password'
+                                }).status(400);
+                            }
+                        } else {
+                            console.log(err);
+                            res.send({
+                                message: `[ERROR]: ${err}`
+                            }).status(500);
+                        }
+                    });
                 } else {
-                    console.log('Datos Incorrectos');
+                    console.log('Incorrect email');
                     res.send({
-                        message: 'Datos incorrectos'
+                        message: 'Incorrect email'
                     }).status(400);
                 }
             } else {

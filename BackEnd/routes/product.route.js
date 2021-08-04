@@ -1,7 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const productSchema = require('../models/Products');
-let registroPrueba = require('../database/registros.prueba.json');
 
 const router = express.Router();
 
