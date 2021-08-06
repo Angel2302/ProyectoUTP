@@ -1,28 +1,12 @@
-/* eslint-disable react/style-prop-object */
-// src/ Category.js
-
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
-import axios from "axios";
-
-import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
-
-const Item = () => {
-  const { name } = useParams();
-
-  return (
-    <div>
-      <h3>{name}</h3>
-    </div>
-  );
-};
 
 const Home = () => {
   
   return (
-    <main class="container-sm">
+    <main className="container-sm">
       <Carousel>
-  <Carousel.Item>
+      <Carousel.Item>
     <img
       className="d-block w-100"
       src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Detailaufnahme_Weihnachtsstern_-_gro%C3%9F.jpg"
@@ -58,14 +42,14 @@ const Home = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-  <div class="bg-light p-5 rounded">
+  <div className="bg-light p-5 rounded">
     <h1 fontStyle="vertical-align: inherit;">The Green List</h1>
-    <p class="lead fontStyle-vertical-align-inherit">With this project, it is expected to 
+    <p className="lead fontStyle-vertical-align-inherit">With this project, it is expected to 
     reach a medium range in the region, covering varied territories and with different locations, 
     for now with Spanish speaking, our target audience being individuals belonging to the horticultural 
     community and those gardening enthusiasts with an interest in sharing their 
     knowledge regarding articles used daily in this medium </p>
-    <a class="btn btn-lg btn-primary" href="Docs" >See NavBar Docs »</a>
+    <a className="btn btn-lg btn-primary" href="Docs" >See NavBar Docs »</a>
   </div>
   
 </main>

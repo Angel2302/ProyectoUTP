@@ -1,17 +1,17 @@
 import React, {Fragment, useState} from 'react';
-import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import axios from 'axios';
 
 const Formulario = () => {
 
     const[datos, setDatos] = useState({
-        Name:'',
-        Lastname:'',
-        Username: '',
-        Email: '',
-        Password: '',
-        ConfirmPassword: ''
+        nombre:'',
+        apellidos:'',
+        nombreUsuario: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
     })
 
     const handleInputChange =(event) => {
@@ -29,7 +29,7 @@ const Formulario = () => {
         axios.post('/users/add-user', 
             datos
         ).then(res => {
-            console.log(res.data.message);
+            console.log(res.data);
         }).catch(error => {
             console.log(error);
         });
@@ -37,57 +37,7 @@ const Formulario = () => {
     }
 
     return (
-    <div class= "container justify-content-center" >
-        {/* <Fragment>
-            <form className='container' onSubmit={sendDatos}>
-                    <div class="container text-center">
-                    <h2 >Registration Form</h2>
-                    <div className="form-group">
-                    </div>
-                        <label>First name</label>
-                        <input type="text"
-                         className="form-control" 
-                         placeholder="First name" 
-                         onChange={handleInputChange} />
-                    </div> 
-
-                    <div className="form-group">
-                        <label>Last name</label>
-                        <input type="text" 
-                        className="form-control" 
-                        placeholder="Last name" 
-                        onChange={handleInputChange} />
-                    </div>
-                    <div className="form-group">
-                        <label>Username</label>
-                        <input 
-                        type="text" 
-                        className="form-control" 
-                        placeholder="Last name" 
-                        onChange={handleInputChange} />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Email address</label>
-                        <input type="email" className="form-control" placeholder="Enter email" onChange={handleInputChange} />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Enter password" onChange={handleInputChange}/>
-                    </div>
-                    <div className="form-group">
-                        <label>Confirm Password</label>
-                        <input type="password" className="form-control" placeholder="Enter password" onChange={handleInputChange}/>
-                    </div>
-                    <div class="col text-center">
-                    <button onClick={ register } className="btn btn-success regular-button">
-                            <Link to="/login" className= "nav-link text-light " >Sign up</Link>
-                    </button>
-                    </div>
-                </form> 
-            </Fragment> */}
-        
+    <div className= "container justify-content-center" >
         <div className="m-4">
         <Fragment>
             <h3>Registration Form</h3>
@@ -97,7 +47,7 @@ const Formulario = () => {
                             placeholder="Email"
                             className="form-control"
                             type="email"
-                            name="Email"
+                            name="email"
                             onChange={handleInputChange}
                         ></input>
                 </div>
@@ -107,7 +57,7 @@ const Formulario = () => {
                             placeholder="Name"
                             className="form-control"
                             type="text"
-                            name="Name"
+                            name="nombre"
                             onChange={handleInputChange}
                         ></input>
                 </div>    
@@ -116,7 +66,7 @@ const Formulario = () => {
                             placeholder="Lastname"
                             className="form-control"
                             type="text"
-                            name="Lastname"
+                            name="apellidos"
                             onChange={handleInputChange}
                         ></input>
                 </div>
@@ -125,7 +75,7 @@ const Formulario = () => {
                             placeholder="Username"
                             className="form-control"
                             type="text"
-                            name="Username"
+                            name="nombreUsuario"
                             onChange={handleInputChange}
                         ></input>
                 </div>
@@ -136,7 +86,7 @@ const Formulario = () => {
                             placeholder="password"
                             className="form-control"
                             type="password"
-                            name="Password"
+                            name="password"
                             onChange={handleInputChange}
                         ></input>
                     </div>
@@ -145,7 +95,7 @@ const Formulario = () => {
                             placeholder="confirm password"
                             className="form-control"
                             type="password"
-                            name="ConfirmPassword"
+                            name="confirmPassword"
                             onChange={handleInputChange}
                         ></input>
                     </div>

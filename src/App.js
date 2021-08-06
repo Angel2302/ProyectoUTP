@@ -1,5 +1,3 @@
-// src/App.js
-
 import React from "react";
 import  "bootstrap/dist/css/bootstrap.min.css";
 import { Link, Route, Switch } from "react-router-dom";
@@ -12,7 +10,6 @@ import Forgot from "./Forgot";
 import Products from "./Products";
 import Docs from "./Docs";
 import PrivateRoute from "./PrivateRoute";
-import { Form } from "react-bootstrap";
 import Formulario from "./Formulario";
 
 
@@ -75,7 +72,7 @@ export default function App() {
           <Route path="/formulario"><Formulario/></Route> 
           <PrivateRoute path="/admin" component={ Admin }></PrivateRoute>
           <Route path="/forgot"><Forgot/></Route>
-          <Route path="/products/:Category"><Products/></Route>
+          <Route path="/products/:categoria"><Products/></Route>
           <Route path="/Docs"><Docs/></Route>
         </Switch>
     </div>

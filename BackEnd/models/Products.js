@@ -3,6 +3,9 @@ const Schema = Mongoose.Schema;
 
 let productSchema = new Schema(
     {
+        id: {
+            type: Number,
+        },
         nombre: {
             type: String,
         },

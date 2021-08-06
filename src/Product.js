@@ -5,16 +5,16 @@ import { useParams } from "react-router-dom";
 
 const Product = ({ data }) => {
   const { productId } = useParams();
-  const product = data.find(p => p.id == Number(productId));
+  const product = data.find(p => p.id === Number(productId));
   let productData;
 
   if (product) {
     productData = (
       <div>
-        <h3> { product.Nombre } </h3>
-        <p>{ product.Funcion }</p>
+        <h3> { product.nombre } </h3>
+        <p>{ product.funcion }</p>
         <hr />
-        <h4>{ product.Color }</h4>
+        <h4>{ product.color }</h4>
       </div>
     );
   } else {

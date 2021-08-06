@@ -1,6 +1,5 @@
 // src/Products.js
-
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
 import Product from "./Product";
 // import Product from "./product";
@@ -38,7 +37,7 @@ const Products = () => {
     console.log(product)
     return (
       <li key={product.id}>
-        <Link className= "h5" to={`${url}/${product.id}`}>{product.Nombre}</Link>
+        <Link className= "h5" to={`${url}/${product.id}`}>{product.nombre}</Link>
       </li>
     );
   });

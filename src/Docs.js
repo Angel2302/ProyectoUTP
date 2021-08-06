@@ -1,11 +1,7 @@
 
 import React from "react";
-import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
-
-
 
 const Docs = () => {
-  const { url, path } = useRouteMatch();
 
   return (
     <div class='row'>

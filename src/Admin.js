@@ -1,55 +1,18 @@
-// import React from "react";
-// import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
-
-// const Item = () => {
-//   const { name } = useParams();
-
-//   return (
-//     <div>
-//       <h3>{name}</h3>
-//     </div>
-//   );
-// };
-
-// const Admin = () => {
-//   const { url, path } = useRouteMatch();
-
-//   return(
-//     <div>
-//       <h3>Hello admin</h3>
-      
-//     </div>
-//   );
-// };
-
-// export default Admin;
-import { message } from 'antd';
-import { even } from 'prelude-ls';
 import React, {Fragment, useState} from 'react';
-import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import axios from 'axios';
-
-const Item = () => {
-     const { name } = useParams();
-    return (
-        <div>
-        <h3>{name}</h3>
-        </div>
-    );
-};
-  
 
 const Formulario = () => {
 
     const[datos, setDatos] = useState({
         id: '',
-        Nombre:'',
-        Category:'',
-        Funcion: '',
-        Weight: '',
-        Color: '',
-        Price: '',
+        nombre:'',
+        categoria:'',
+        funcion: '',
+        peso: '',
+        color: '',
+        precio: '',
     })
 
     const handleInputChange =(event) => {
@@ -67,52 +30,49 @@ const Formulario = () => {
         axios.post('/products/search-product',
             datos
         ).then(res => {
-            setDatos(res.data);
-            console.log(res.data);
+            if(res.data.message){
+                alert(res.data.message);
+            } else {
+                setDatos({
+                    id: res.data.id,
+                    nombre:res.data.nombre,
+                    categoria:res.data.categoria,
+                    funcion: res.datafuncion,
+                    peso: res.data.peso,
+                    color: res.data.color,
+                    precio: res.data.precio,
+                });
+                alert('Seach OK');
+                console.log(datos);
+            }
+            
         }).catch(error => {
             console.log(error)
         });
-        alert('Seach OK');
     }
     function Add() {
-        var vacio = 0;
-        if(datos.id === ''){
-            alert('id empty field');
-            vacio = 1;
-        }
-            else if(datos.Nombre === ''){
-                alert('empty field');
-                vacio = 1;
-            }
-            else if(datos.Category === ''){
-                alert('Category empty field');
-                vacio = 1;
-            }
-            else if(datos.Funcion === ''){
-                alert('Function empty field');
-                vacio = 1;
-            }
-        else if (!vacio)
-        {
-           
         axios.post('/products/add-product',
             datos
         ).then(res => {
-            setDatos({
-                id: '',
-                Nombre:'',
-                Category:'',
-                Funcion: '',
-                Weight: '',
-                Color: '',
-                Price: '',
-            });
-            console.log(res.data.message);
+            if(res.data.message){
+                alert(res.data.message);
+            } else {
+                setDatos({
+                    id: '',
+                    nombre:'',
+                    categoria:'',
+                    funcion: '',
+                    peso: '',
+                    color: '',
+                    precio: '',
+                });
+                alert('Add successful');
+            }
         }).catch(error => {
             console.log(error);
         });
-        alert('Add successful');
-        }
+        
+        /* } */
         
         
     }
@@ -120,28 +80,46 @@ const Formulario = () => {
         axios.put(`/products/update-product/${datos.id}`,
             datos
         ).then(res => {
-            setDatos(res.data);
-            console.log(res.data);
+            
+            if(res.data.message){
+                alert(res.data.message)
+            } else {
+                setDatos({
+                    id: '',
+                    nombre:'',
+                    categoria:'',
+                    funcion: '',
+                    peso: '',
+                    color: '',
+                    precio: '',
+                });
+                alert('edit successful');
+            }
         }).catch(error => {
             console.log(error);
         });
-        alert('edit successful');
+        
     }
     function Delete() {
         axios.delete(`/products/delete-product/${datos.id}`).then(res => {
-            setDatos({
-                id: '',
-                Nombre:'',
-                Category:'',
-                Funcion: '',
-                Weight: '',
-                Color: '',
-                Price: '',
-            });
+            if(res.data.message){
+                alert(res.data.message);
+            } else {
+                setDatos({
+                    id: '',
+                    nombre:'',
+                    categoria:'',
+                    funcion: '',
+                    peso: '',
+                    color: '',
+                    precio: '',
+                });
+                alert('Delete successful');
+            }
         }).catch(error => {
             console.log(error)
         });
-        alert('Delete successful');
+        
     }
 
     return (
@@ -165,8 +143,8 @@ const Formulario = () => {
                             placeholder="Name"
                             className="form-control"
                             type="text"
-                            name="Nombre"
-                            value={ datos.Nombre }
+                            name="nombre"
+                            value={ datos.nombre }
                             onChange={handleInputChange}
                         ></input>
                     </div>
@@ -174,22 +152,21 @@ const Formulario = () => {
                 </div>
                 <div className='row mt-2'>
                     <div className='col-6'>
-                        <input
-                            placeholder="Category"
-                            className="form-control"
-                            type="text"
-                            name="Category"
-                            value={ datos.Category }
-                            onChange={handleInputChange}
-                        ></input>
+                        <select value={ datos.categoria } className="form-control"  onChange={handleInputChange} placeholder="Category" name="categoria">
+                            <option value="">Select Category</option> 
+                            <option value="tools">Tools</option> 
+                            <option value="seeds">Seeds</option> 
+                            <option value="fertilizers">Fertilizers</option>
+                            <option value="plants">Plants</option> 
+                        </select>
                     </div>
                     <div className='col-6'>
                         <input
                             placeholder="Funcion"
                             className="form-control"
                             type="text"
-                            name="Funcion"
-                            value={ datos.Funcion }
+                            name="funcion"
+                            value={ datos.funcion }
                             onChange={handleInputChange}
                         ></input>
                     </div>
@@ -200,8 +177,8 @@ const Formulario = () => {
                             placeholder="Color"
                             className="form-control"
                             type="text"
-                            name="Color"
-                            value={ datos.Color }
+                            name="color"
+                            value={ datos.color }
                             onChange={handleInputChange}
                         ></input>
                     </div>
@@ -210,8 +187,8 @@ const Formulario = () => {
                             placeholder="Weight"
                             className="form-control"
                             type="number"
-                            name="Weight"
-                            value={ datos.Weight }
+                            name="peso"
+                            value={ datos.peso }
                             onChange={handleInputChange}
                         ></input>
                     </div>
@@ -220,8 +197,8 @@ const Formulario = () => {
                             placeholder="Price"
                             className="form-control"
                             type="number"
-                            name="Price"
-                            value={ datos.Price }
+                            name="precio"
+                            value={ datos.precio }
                             onChange={handleInputChange}
                         ></input>
                     </div>
@@ -247,8 +224,7 @@ const Formulario = () => {
                         <button className="btn btn-success  mb-4" onClick={Delete}>
                         <Link to="/Admin" className= "nav-link text-light" >Delete</Link>
                         </button>
-                    </div>               
-                    
+                    </div>
                 </div>
             </form>
         </Fragment>

@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { Link, Route, Redirect, useLocation } from "react-router-dom"; 
+import { Link, Redirect, useLocation } from "react-router-dom"; 
+import { isExpired } from 'react-jwt'
 
 import axios from "axios";
 
 export default function Login() {
 
   const { state } = useLocation();
-  const { from } = state || { from: { pathname: "/" } };
-  const [redirectToReferrer, setRedirectToReferrer] = useState(false);
+  const { from } = state || { from: { pathname: "/admin" } };
 
   const[datos, setDatos] = useState({
-    Username: "",
-    Password: ""
+    username: "",
+    password: ""
   })
 
   function login() {
@@ -19,10 +19,8 @@ export default function Login() {
       datos
     ).then(res => {
       if(!res.data.message) {
-        console.log(res.data);
-        fakeAuth.authenticate(() => {
-          setRedirectToReferrer(true);
-        });
+        localStorage.setItem('jwtToken', res.data.token);
+        window.location.replace('');
       } else {
         alert(res.data.message)
         console.log(res.data.message)
@@ -39,8 +37,7 @@ export default function Login() {
     })
   }
 
-  if (redirectToReferrer) { 
-    console.log(redirectToReferrer);
+  if (!isExpired(localStorage.getItem('jwtToken'))) { 
     return  <Redirect to={from} />;
   } 
 
@@ -59,7 +56,7 @@ export default function Login() {
               id="form2Example1" 
               className="form-control"
               onChange={ handleInputChange }
-              name="Username" />
+              name="username" />
             <label className="form-label h5">Username</label>
           </div>
 
@@ -70,7 +67,7 @@ export default function Login() {
               id="form2Example2" 
               className="form-control"
               onChange={ handleInputChange }
-              name="Password" />
+              name="password" />
             <label className="form-label h5">Password</label>
           </div>
 
@@ -100,45 +97,11 @@ export default function Login() {
               <a href="/forgot">Forgot password?</a>
             </div>
           </div>
-
-          
-          
-
           {/* <!-- Register buttons --> */}
           <div className="text-center">
             <p>Not a member? <a href="/formulario">Register</a></p>
-            {/* social media buttons /////////////////////////// */}
-            {/* <p>or sign up with:</p> */}
-           
-            {/* <button type="button" class="btn btn-success btn-floating mx-1">
-                <i class="fab fa-facebook-f"></i>
-            </button>
-            
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-google"></i>
-            </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-twitter"></i>
-            </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-github"></i>
-            </button> */}
-            
-            {/* social media buttons /////////////////////////// */}
-            
           </div>
         </form>
     </div>
   );
 }
-
-/* A fake authentication function */
-export const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true;
-    setTimeout(cb, 100);
-  }
-};
