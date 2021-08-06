@@ -121,6 +121,10 @@ const Formulario = () => {
         });
         
     }
+    function Logout() {
+        alert('Delete successful');
+        
+    }
 
     return (
         <div className=" center m-4">
@@ -223,6 +227,11 @@ const Formulario = () => {
                     <div className='col-3 '>
                         <button className="btn btn-success  mb-4" onClick={Delete}>
                         <Link to="/Admin" className= "nav-link text-light" >Delete</Link>
+                        </button>
+                    </div>
+                    <div className='col-3 '>
+                        <button className="btn btn-success  mb-4" onClick={Logout}>
+                        <Link to="/Admin" className= "nav-link text-light" >Logout</Link>
                         </button>
                     </div>
                 </div>
