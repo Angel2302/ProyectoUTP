@@ -3,6 +3,7 @@ const Mongoose  = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const dbConfig = require('./database/db');
+const passport = require('passport');
 
 const morgan = require('morgan');
 
@@ -21,6 +22,11 @@ Mongoose.connect(dbConfig.db, {
 });
 
 const app = express();
+
+// Passport middleware
+app.use(passport.initialize());
+require('./config/passport')(passport);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true

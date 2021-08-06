@@ -12,14 +12,23 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-.container-bg {
-  background-color: rgba(221, 212, 159, 0.527);
+.bg-light-green {
+  background-color: #1e9686;
+}
+
+.list-group-mine .list-group-item {
+  background-color: #f1f9fb;
+  border-top: 1px solid #0091b5;
+  border-left-color: #fff;
+  border-right-color: #fff;
+}
+.list-group-mine .list-group-item:hover {
+  background-color: rgb(35, 112, 80);
 }
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  box-sizing: inherit;
 }
 body {
   margin: 0;
@@ -1576,6 +1585,7 @@ pre code {
   overflow-y: scroll;
 }
 .container {
+  background-color: #bce8f1;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;

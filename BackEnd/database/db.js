@@ -1,3 +1,3 @@
 module.exports = {
-    db: 'mongodb://localhost:27017/back-end-proyecto',
+    db: 'mongodb+srv://userProject:MinTIC2022@cluster0.syuzl.azure.mongodb.net/ProyectoUTP?retryWrites=true&w=majority',
 };

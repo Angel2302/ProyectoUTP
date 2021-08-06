@@ -1,105 +1,107 @@
-// src/Login.js
-
 import React, { useState } from "react";
-import { Redirect, useLocation } from "react-router-dom";
+import { Link, Redirect, useLocation } from "react-router-dom"; 
+import { isExpired } from 'react-jwt'
+
+import axios from "axios";
 
 export default function Login() {
-  const { state } = useLocation();
-  const { from } = state || { from: { pathname: "/" } };
-  const [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
-  const login = () => {
-    fakeAuth.authenticate(() => {
-      setRedirectToReferrer(true);
+  const { state } = useLocation();
+  const { from } = state || { from: { pathname: "/admin" } };
+
+  const[datos, setDatos] = useState({
+    username: "",
+    password: ""
+  })
+
+  function login() {
+    axios.post('/users/login',
+      datos
+    ).then(res => {
+      if(!res.data.message) {
+        localStorage.setItem('jwtToken', res.data.token);
+        window.location.replace('');
+      } else {
+        alert(res.data.message)
+        console.log(res.data.message)
+      }
+    }).catch(error => {
+      console.log(error);
     });
   };
 
-  if (redirectToReferrer) {
-    return <Redirect to={from} />;
+  const handleInputChange =(event) => {
+    setDatos({
+      ...datos,
+      [event.target.name] : event.target.value 
+    })
   }
 
+  if (!isExpired(localStorage.getItem('jwtToken'))) { 
+    return  <Redirect to={from} />;
+  } 
+
   return (
-    <div class= "container">
+    <div className= "container justify-content-center ">
         {/* login-form */}
         <div>
         <h3>You must log in to view the page at {from.pathname}</h3>
         </div>
 
-        <form class= "container">
+        <form className= "container sm">
           {/* <!-- Email input --> */}
-          <div class="form-outline mb-4">
-            <input type="email" id="form2Example1" class="form-control" />
-            <label class="form-label" for="form2Example1">Email address</label>
+          <div className="form-outline mb-4">
+            <input 
+              type="email" 
+              id="form2Example1" 
+              className="form-control"
+              onChange={ handleInputChange }
+              name="username" />
+            <label className="form-label h5">Username</label>
           </div>
 
           {/* <!-- Password input --> */}
-          <div class="form-outline mb-4">
-            <input type="password" id="form2Example2" class="form-control" />
-            <label class="form-label" for="form2Example2">Password</label>
+          <div className="form-outline mb-4">
+            <input 
+              type="password" 
+              id="form2Example2" 
+              className="form-control"
+              onChange={ handleInputChange }
+              name="password" />
+            <label className="form-label h5">Password</label>
           </div>
 
           {/* <!-- 2 column grid layout for inline styling --> */}
-          <div class="row mb-4">
-            <div class="col d-flex justify-content-center">
+          <div className="row mb-4">
+            <div className="col d-flex justify-content-center">
               {/* <!-- Checkbox --> */}
-              <div class="form-check">
+              <div className="form-check">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="checkbox"
                   value=""
                   id="form2Example3"
-                  unchecked
+                  unchecked="true"
                 />
-                <label class="form-check-label" for="form2Example3"> Remember me </label>
+                <label className="form-check-label"> Remember me </label>
               </div>
             </div>
-
-            <div class="col">
+            {/* <!-- Submit button --> */}
+            <div className="col text-center">
+              <button onClick={login} className="btn btn-success regular-button">
+                <Link to="/admin" className= "nav-link h5 text-white" >Login</Link>
+              </button>      
+            </div>
+            <div className="col">
               {/* <!-- Simple link --> */}
-              <a href="#!">Forgot password?</a>
+              <a href="/forgot">Forgot password?</a>
             </div>
           </div>
-
-          
-          
-
           {/* <!-- Register buttons --> */}
-          <div class="text-center">
-            <p>Not a member? <a href="#!">Register</a></p>
-
-            {/* social media buttons ///////////////////////////*/}
-            {/* <p>or sign up with:</p>
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fab fa-facebook-f"></i>
-            </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fab fa-google"></i>
-            </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fab fa-twitter"></i>
-            </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fab fa-github"></i>
-            </button> */}
+          <div className="text-center">
+            <p>Not a member? <a href="/formulario">Register</a></p>
           </div>
         </form>
-        
-      
-
-      {/* <!-- Submit button --> */}
-      <button onClick={login} class="btn btn-success btn-block mb-4">Log in</button>
     </div>
   );
 }
-
-/* A fake authentication function */
-export const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true;
-    setTimeout(cb, 100);
-  }
-};

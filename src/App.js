@@ -1,28 +1,27 @@
-// src/App.js
-
 import React from "react";
 import  "bootstrap/dist/css/bootstrap.min.css";
 import { Link, Route, Switch } from "react-router-dom";
 import Category from "./Category";
 import Members from "./Members";
 import Home from "./Home";
-import Login from './Login';
+import Admin from "./Admin";
+import Login from "./Login";
+import Forgot from "./Forgot";
+import Products from "./Products";
+import Docs from "./Docs";
 import PrivateRoute from "./PrivateRoute";
+import Formulario from "./Formulario";
 
 
-const Admin = () => (
-  <div>
-    <h2>Welcome admin!</h2>
-  </div>
-);
+
 
 export default function App() {
   return (
     <div> 
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav className="navbar  navbar-expand-md navbar-dark bg-secondary">
           <div>
-            <a class="navbar-brand" >
-              { <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plant" width="64" height="64" viewBox="0 0 24 24" stroke-width="2" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <a className="navbar-brand" >
+              { <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-plant" width="64" height="64" viewBox="0 0 24 24" strokeWidth="2" stroke="#00b341" fill="none" strokeLinecap="round" strokeLinejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                   <path d="M7 15h10v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-4z" />
                   <path d="M12 9a6 6 0 0 0 -6 -6h-3v2a6 6 0 0 0 6 6h3" />
@@ -31,46 +30,50 @@ export default function App() {
                 </svg>}
             </a>
           </div> 
-          <div class="navbar navbar-expand-xl bg-dark">
-              <ul class="navbar-nav mr-auto" >
-              <li>
-                <Link to="/Home" class= "nav-link h5">Home</Link>
-              </li>
+          <div className="navbar navbar-expand-xl  ">
+              <ul className="navbar-nav mr-auto" >
+                <li>
+                  <Link to="/Home" className= "nav-link h5 ">Home</Link>
+                </li>
+                    
+                    
+                <li>
+                  <Link to="/category" className= "nav-link h5 ">Category</Link>
+                </li>
                   
-                  
-            <li>
-            <Link to="/category" class= "nav-link h5">Category</Link>
-            </li>
-              
-            <li>            
-                <Link to="/admin" class= "nav-link h5" >Login</Link>        
-            </li>    
-                  
+                <li>            
+                    <Link to="/login" className= "nav-link h5 " >Login</Link>        
+                </li>              
+                    
               </ul>
           </div>
-          {/* <div class="mx-auto order-0">
-              <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                  <span class="navbar-toggler-icon"></span>
+          {/* <div className="mx-auto order-0">
+              <a className="navbar-brand mx-auto" href="#">Navbar 2</a>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                  <span className="navbar-toggler-icon"></span>
               </button>
           </div> */}
-          <div class="navbar navbar-expand-xl w-100 bg-dar">
-              <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <Link to="/members" class= "nav-link h5" >Members</Link>
+          <div className="navbar navbar-expand-xl w-100 bg-dar ">
+              <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link to="/members" className= "nav-link h5" >Members</Link>
               </li>
                   
               </ul>
           </div>
        </nav>
       
-
         <Switch>
-          <Route Exact path="/Home"><Home /></Route>
+          <Route path="/home"><Home /></Route>
+          <Route path="/" exact><Home /></Route>
           <Route path="/category"><Category /></Route>
-          <Route path="/members"><Members /></Route>
-          <Route path="/login"><Login /></Route>
-          <PrivateRoute path="/admin" component={Admin} />
+          <Route path="/members"><Members /></Route>          
+          <Route path="/login"><Login/></Route>
+          <Route path="/formulario"><Formulario/></Route> 
+          <PrivateRoute path="/admin" component={ Admin }></PrivateRoute>
+          <Route path="/forgot"><Forgot/></Route>
+          <Route path="/products/:categoria"><Products/></Route>
+          <Route path="/Docs"><Docs/></Route>
         </Switch>
     </div>
   );
