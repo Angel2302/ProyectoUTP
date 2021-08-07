@@ -119,7 +119,11 @@ const Formulario = () => {
         }).catch(error => {
             console.log(error)
         });
-        
+    }
+
+    function Logout() {
+        alert('Closed session');
+        localStorage.removeItem('jwtToken');
     }
 
     return (
@@ -210,12 +214,12 @@ const Formulario = () => {
                         <Link to="/Admin" className= "nav-link text-light" >Search</Link>
                         </button>
                     </div>
-                    <div className='col-3 '>
+                    <div className='col-2 '>
                         <button className="btn btn-success  mb-4" onClick={Add}>
                         <Link to="/Admin" className= "nav-link text-light" >Add</Link>
                         </button>
                     </div>
-                    <div className='col-3 '>
+                    <div className='col-2 '>
                         <button className="btn btn-success  mb-4" onClick={Edit}>
                         <Link to="/Admin" className= "nav-link text-light" >Edit</Link>
                         </button>
@@ -223,6 +227,11 @@ const Formulario = () => {
                     <div className='col-3 '>
                         <button className="btn btn-success  mb-4" onClick={Delete}>
                         <Link to="/Admin" className= "nav-link text-light" >Delete</Link>
+                        </button>
+                    </div>
+                    <div className='col-2 '>
+                        <button className="btn btn-danger  mb-4" onClick={Logout}>
+                        <Link to="/Admin" className= "nav-link text-light" >Logout</Link>
                         </button>
                     </div>
                 </div>
