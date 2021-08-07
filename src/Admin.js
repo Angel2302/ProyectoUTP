@@ -119,7 +119,11 @@ const Formulario = () => {
         }).catch(error => {
             console.log(error)
         });
-        
+    }
+
+    function Logout() {
+        alert('Closed session');
+        localStorage.removeItem('jwtToken');
     }
     function Logout() {
         alert('Closed session');
@@ -230,7 +234,11 @@ const Formulario = () => {
                         </button>
                     </div>
                     <div className='col-2 '>
+<<<<<<< HEAD
                         <button className="btn btn-success  mb-4" onClick={Logout}>
+=======
+                        <button className="btn btn-danger  mb-4" onClick={Logout}>
+>>>>>>> 98696d6e32f2354e25e0dc69f13ad40b433e0e03
                         <Link to="/Admin" className= "nav-link text-light" >Logout</Link>
                         </button>
                     </div>
