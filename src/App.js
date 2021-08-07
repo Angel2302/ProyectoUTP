@@ -11,9 +11,7 @@ import Products from "./Products";
 import Docs from "./Docs";
 import PrivateRoute from "./PrivateRoute";
 import Formulario from "./Formulario";
-
-
-
+import RecoverPassword from "./RecoverPassword";
 
 export default function App() {
   return (
@@ -74,6 +72,7 @@ export default function App() {
           <Route path="/forgot"><Forgot/></Route>
           <Route path="/products/:categoria"><Products/></Route>
           <Route path="/Docs"><Docs/></Route>
+          <Route path="/recover-password/:token"><RecoverPassword/></Route>
         </Switch>
     </div>
   );
