@@ -21,6 +21,7 @@ const Formulario = () => {
         Weight: '',
         Color: '',
         Price: '',
+        imageUrl: '',
     })
 
     const handleInputChange =(event) => {
@@ -109,6 +110,15 @@ const Formulario = () => {
                             omChange={handleInputChange}
                         ></input>
                     </div>
+                </div>
+                <div class='row mt-3'>
+                        <input
+                            placeholder="imageUrl"
+                            className="form-control"
+                            type="text"
+                            imageUrl="imageUrl"
+                            omChange={handleInputChange}
+                        ></input>
                 </div>
                 
                 <div class='row center mt-3'>
