@@ -120,7 +120,6 @@ const Formulario = () => {
                             omChange={handleInputChange}
                         ></input>
                 </div>
-                
                 <div class='row center mt-3'>
                     <div class='col-3 center'>
                         <button class="btn btn-success btn-block mb-4">
