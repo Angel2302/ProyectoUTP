@@ -113,6 +113,7 @@ const Formulario = () => {
                     peso: '',
                     color: '',
                     precio: '',
+                    imageUrl: '',
                 });
                 alert('Delete successful');
             }
@@ -211,7 +212,15 @@ const Formulario = () => {
                         ></input>
                     </div>
                 </div>
-                
+                <div class='row mt-3'>
+                        <input
+                            placeholder="imageUrl"
+                            className="form-control"
+                            type="text"
+                            imageUrl="imageUrl"
+                            omChange={handleInputChange}
+                        ></input>
+                </div>
                 <div className='row center mt-3'>
                     <div className='col-3 '>
                         <button className="btn btn-success  mb-4" onClick={Search}>
@@ -234,11 +243,7 @@ const Formulario = () => {
                         </button>
                     </div>
                     <div className='col-2 '>
-<<<<<<< HEAD
-                        <button className="btn btn-success  mb-4" onClick={Logout}>
-=======
                         <button className="btn btn-danger  mb-4" onClick={Logout}>
->>>>>>> 98696d6e32f2354e25e0dc69f13ad40b433e0e03
                         <Link to="/Admin" className= "nav-link text-light" >Logout</Link>
                         </button>
                     </div>
