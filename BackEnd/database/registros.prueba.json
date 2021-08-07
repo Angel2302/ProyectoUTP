@@ -1,0 +1,86 @@
+{
+    "users": [
+        {
+            "id": "user1",
+            "nombre": "user1",
+            "telefono": 0,
+            "email": "user1",
+            "password": "user1"
+        },
+        {
+            "id": "user2",
+            "nombre": "user2",
+            "telefono": 1,
+            "email": "user2",
+            "password": "user2"
+        },
+        {
+            "id": "user3",
+            "nombre": "user3",
+            "telefono": 2,
+            "email": "user3",
+            "password": "user3"
+        },
+        {
+            "id": "user4",
+            "nombre": "user4",
+            "telefono": 3,
+            "email": "user4",
+            "password": "user4"
+        },
+        {
+            "id": "user5",
+            "nombre": "user5",
+            "telefono": 4,
+            "email": "user5",
+            "password": "user5"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "Nombre": "product1",
+            "Category": "tools",
+            "Funcion": "product1",
+            "Color": "Rojo",
+            "Weight": 50,
+            "Price": 150000
+        },
+        {
+            "id": 2,
+            "Nombre": "product2",
+            "Category": "seeds",
+            "Funcion": "product2",
+            "Color": "Rojo",
+            "Weight": 50,
+            "Price": 150000
+        },
+        {
+            "id": 3,
+            "Nombre": "product3",
+            "Category": "fertilizers",
+            "Funcion": "product3",
+            "Color": "Rojo",
+            "Weight": 50,
+            "Price": 150000
+        },
+        {
+            "id": 4,
+            "Nombre": "product4",
+            "Category": "plants",
+            "Funcion": "product4",
+            "Color": "Rojo",
+            "Weight": 50,
+            "Price": 150000
+        },
+        {
+            "id": 5,
+            "Nombre": "product5",
+            "Category": "tools",
+            "Funcion": "product5",
+            "Color": "Rojo",
+            "Weight": 50,
+            "Price": 150000
+        }
+    ]
+}
