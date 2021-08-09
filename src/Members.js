@@ -11,35 +11,35 @@ const Members = ({ match }) => {
           id: 1,
           name: "Alex Santiago Angel Zambrano",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie.",
+            "From Fusagasugá. Systems Engineering Student, Scrum and agile technologies manager certified",
           status: "Gestor (Scrum Master)",
         },
         {
           id: 2,
           name: "Cristian Cabarcas torrenegra",
           description:
-            "Mauris finibus, massa eu tempor volutpat, magna dolor euismod dolor.",
+            "From Bogotá, Currently in Cartagena. 6th semester in Systems Engineering, with  expierience in several technologies.",
           status: "Back-end (Tester)",
         },
         {
           id: 3,
-          name: "Jorge Duran",
+          name: "Jorrique Duran Ayala",
           description:
-            "Maecenas condimentum porttitor auctor. Maecenas viverra fringilla felis, eu pretium.",
+            "From Cúcuta. Electronic Engineering Student at UNET, currently in Industrial Internship.",
           status: "Front-end",
         },
         {
           id: 4,
           name: "José Bernardo Pérez Aguirre",
           description:
-            "Ut hendrerit venenatis lacus, vel lacinia ipsum fermentum vel. Cras.",
+            "From Medellín. Electronic Technician and Auto Electrician from SENA, currently Manager at Taximeters shop",
           status: "Front-end (persistencia)",
         },
         {
           id: 5,
           name: "Sebastian Zapata Ossa",
           description:
-            "Petroleum engineer, software development student at UNAD, specialized in front end development",
+            "From Riosucio. Petroleum engineer, software development student at UNAD, specialized in front end development",
           status: "front-end, back-end",
         },
       ];
