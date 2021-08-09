@@ -127,10 +127,6 @@ const Formulario = () => {
         alert('Closed session');
         localStorage.removeItem('jwtToken');
     }
-    function Logout() {
-        alert('Delete successful');
-        
-    }
 
     return (
         <div className=" center m-4">
