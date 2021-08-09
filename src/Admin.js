@@ -41,6 +41,7 @@ const Formulario = () => {
                     peso: res.data.peso,
                     color: res.data.color,
                     precio: res.data.precio,
+                    imageUrl: res.data.imageUrl,
                 });
                 alert('Seach OK');
                 console.log(datos);
@@ -65,6 +66,7 @@ const Formulario = () => {
                     peso: '',
                     color: '',
                     precio: '',
+                    imageUrl: '',
                 });
                 alert('Add successful');
             }
@@ -92,6 +94,7 @@ const Formulario = () => {
                     peso: '',
                     color: '',
                     precio: '',
+                    imageUrl: '',
                 });
                 alert('edit successful');
             }
@@ -126,10 +129,7 @@ const Formulario = () => {
         alert('Closed session');
         localStorage.removeItem('jwtToken');
     }
-    function Logout() {
-        alert('Closed session');
-        
-    }
+   
 
     return (
         <div className=" center m-4">
