@@ -23,6 +23,9 @@ let productSchema = new Schema(
         },
         precio: {
             type: Number,
+        },
+        imageUrl: {
+            type: String,
         }
     },
     {

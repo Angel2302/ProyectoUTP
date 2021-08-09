@@ -13,6 +13,7 @@ const Formulario = () => {
         peso: '',
         color: '',
         precio: '',
+        imageUrl: '',
     })
 
     const handleInputChange =(event) => {
@@ -41,6 +42,7 @@ const Formulario = () => {
                     peso: res.data.peso,
                     color: res.data.color,
                     precio: res.data.precio,
+                    imageUrl: res.data.imageUrl,
                 });
                 alert('Seach OK');
                 console.log(datos);
@@ -65,17 +67,15 @@ const Formulario = () => {
                     peso: '',
                     color: '',
                     precio: '',
+                    imageUrl: '',
                 });
                 alert('Add successful');
             }
         }).catch(error => {
             console.log(error);
         });
-        
-        /* } */
-        
-        
     }
+
     function Edit() {
         axios.put(`/products/update-product/${datos.id}`,
             datos
@@ -92,6 +92,7 @@ const Formulario = () => {
                     peso: '',
                     color: '',
                     precio: '',
+                    imageUrl: '',
                 });
                 alert('edit successful');
             }
@@ -113,6 +114,7 @@ const Formulario = () => {
                     peso: '',
                     color: '',
                     precio: '',
+                    imageUrl: '',
                 });
                 alert('Delete successful');
             }
@@ -203,6 +205,17 @@ const Formulario = () => {
                             type="number"
                             name="precio"
                             value={ datos.precio }
+                            onChange={handleInputChange}
+                        ></input>
+                    </div>
+
+                    <div className='row mt-3'>
+                        <input
+                            placeholder="imageUrl"
+                            className="form-control"
+                            type="text"
+                            name="imageUrl"
+                            value= { datos.imageUrl }
                             onChange={handleInputChange}
                         ></input>
                     </div>
