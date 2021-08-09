@@ -13,6 +13,7 @@ const Formulario = () => {
         peso: '',
         color: '',
         precio: '',
+        imageUrl: '',
     })
 
     const handleInputChange =(event) => {
@@ -73,11 +74,8 @@ const Formulario = () => {
         }).catch(error => {
             console.log(error);
         });
-        
-        /* } */
-        
-        
     }
+
     function Edit() {
         axios.put(`/products/update-product/${datos.id}`,
             datos
@@ -129,7 +127,6 @@ const Formulario = () => {
         alert('Closed session');
         localStorage.removeItem('jwtToken');
     }
-   
 
     return (
         <div className=" center m-4">
@@ -208,6 +205,17 @@ const Formulario = () => {
                             type="number"
                             name="precio"
                             value={ datos.precio }
+                            onChange={handleInputChange}
+                        ></input>
+                    </div>
+
+                    <div className='row mt-3'>
+                        <input
+                            placeholder="imageUrl"
+                            className="form-control"
+                            type="text"
+                            name="imageUrl"
+                            value= { datos.imageUrl }
                             onChange={handleInputChange}
                         ></input>
                     </div>
