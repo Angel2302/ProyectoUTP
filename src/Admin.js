@@ -209,7 +209,7 @@ const Formulario = () => {
                         ></input>
                     </div>
 
-                    <div className='row mt-3'>
+                    {/* <div className='row mt-3'>
                         <input
                             placeholder="imageUrl"
                             className="form-control"
@@ -218,16 +218,17 @@ const Formulario = () => {
                             value= { datos.imageUrl }
                             onChange={handleInputChange}
                         ></input>
-                    </div>
+                    </div> */}
                 </div>
                 <div class='row mt-3'>
-                        <input
-                            placeholder="imageUrl"
-                            className="form-control"
-                            type="text"
-                            imageUrl="imageUrl"
-                            omChange={handleInputChange}
-                        ></input>
+                    <input
+                                placeholder="imageUrl"
+                                className="form-control"
+                                type="text"
+                                name="imageUrl"
+                                value= { datos.imageUrl }
+                                onChange={handleInputChange}
+                            ></input>
                 </div>
                 <div className='row center mt-3'>
                     <div className='col-3 '>
