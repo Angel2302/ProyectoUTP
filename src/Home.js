@@ -9,36 +9,36 @@ const Home = () => {
       <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Detailaufnahme_Weihnachtsstern_-_gro%C3%9F.jpg"
+      src="https://www.homestratosphere.com/wp-content/uploads/2018/08/gardening-tools-lead-image-081918-min.jpg"
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3>Noider</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h3>Tools</h3>
+      <p>Gardening and horticulture tools</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Tricyrtis_hirta_-_blossom_side_%28aka%29.jpg"
+      src="https://img.lalr.co/cms/2020/05/14153258/huerta-casera1.png?size=sm"
       alt="Second slide"
     />
 
     <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3>Horticulture</h3>
+      <p>Everything you need for your Home garden</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Myosotis_sylvatica%2C_Bosvergeet-mij-nietje.jpg"
+      src="https://aws.admagazine.com/prod/designs/v1/assets/1379x690/68306.jpg"
       alt="Third slide"
     />
 
     <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3>Gardening</h3>
+      <p>seeds and fertilizers for your garden</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
