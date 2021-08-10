@@ -14,6 +14,9 @@ const Member = ({ data }) => {
         <h3> {member.name} </h3>
         <p>{member.description}</p>
         <hr />
+        <div className='col'>
+            <img class='img-fluid rounded'  src={ member.image } alt="g" />
+          </div>
         <h4>{member.status}</h4>
       </div>
     );
