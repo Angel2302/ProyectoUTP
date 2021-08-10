@@ -15,7 +15,7 @@ const Member = ({ data }) => {
         <p>{member.description}</p>
         <hr />
         <div className='col'>
-            <img class='img-fluid rounded'  src={ member.image } alt="g" />
+            <img class='img-fluid rounded'  src={ member.image } alt="" />
           </div>
         <h4>{member.status}</h4>
       </div>

@@ -77,7 +77,12 @@ const Members = ({ match }) => {
             <Member data={memberData} />
           </Route>
           <Route exact path={url}>
-            <p>To know more about our Members Please select one.</p>
+          <div>  
+            <h4>To know more about our Members Please select one.</h4>
+            <div className='col'>
+            <img class='img-fluid rounded'  src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Group_people_icon.jpg" alt="" />
+          </div>
+          </div>
           </Route>
       </div>
       </div>
