@@ -21,7 +21,7 @@ const Members = ({ match }) => {
           description:
             "From Bogotá, Currently in Cartagena. 6th semester in Systems Engineering, with  expierience in several technologies.",
           status: "Back-end (Tester)",
-          image:"https://i.ibb.co/QNsPMrw/Bernardo-copia.jpg"
+          image:"https://i.ibb.co/BCTBXM2/Cristian.jpg"
         
         },
         {
