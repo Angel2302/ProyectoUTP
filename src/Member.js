@@ -12,12 +12,12 @@ const Member = ({ data }) => {
     memberData = (
       <div>
         <h3> {member.name} </h3>
-        <p>{member.description}</p>
+        <p className="card alert-success alert-dismissible h5 font-italic mb-3">{member.description}</p>
         <hr />
-        <div className='col'>
-            <img class='img-fluid rounded'  src={ member.image } alt="" />
+        <div className='col text-center'>
+            <img className='img-fluid rounded cent cent'  src={ member.image } alt="" />
           </div>
-        <h4>{member.status}</h4>
+        <h4 className="card alert-success alert-dismissible center-block text-xl-center">{member.status}</h4>
       </div>
     );
   } else {

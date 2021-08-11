@@ -68,9 +68,11 @@ const Members = ({ match }) => {
   return (
     <div class= "container">
       <div class= "row">
-        <div class= "col" >
+        <div className= "col list-group-item " >
           <h3>Members</h3>
-          <ul>{linkList}</ul>
+          <ul className="list-group card allert-secondary"><li class="list-group-item">{linkList}</li>
+          
+          </ul>
         </div>
         <div class= "col">
           <Route path={`${url}/:memberId`}>
@@ -78,7 +80,7 @@ const Members = ({ match }) => {
           </Route>
           <Route exact path={url}>
           <div>  
-            <h4>To know more about our Members Please select one.</h4>
+            <h4 className="card alert-success">To know more about our Members Please select one.</h4>
             <div className='col'>
             <img class='img-fluid rounded'  src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Group_people_icon.jpg" alt="" />
           </div>
