@@ -17,7 +17,7 @@ const Docs = () => {
                         flowers, trees, vegetables, or vegetables (orchards), either for aesthetics,
                         for taste or for food, and in whose achievement the economic objective is secondary.
                         </Card.Text>
-                        <Button variant="success" href="https://www.gardeningknowhow.com/garden-how-to/info">Visit Gardening.knowhow.com</Button>
+                        <Button variant="success" href="https://www.gardeningknowhow.com/garden-how-to/info" target="_blank">Visit Gardening.knowhow.com</Button>
                     </Card.Body>
                 </Card>
                
@@ -37,7 +37,7 @@ const Docs = () => {
                         and culture (‘cultivation’), that is, ‘cultivation in orchards’.
                         </Card.Text>
                         
-                        <Button variant="success" href="https://www.gardeningknowhow.com/garden-how-to/info">Visit Gardening.knowhow.com</Button>
+                        <Button variant="success" href="https://www.gardeningknowhow.com/garden-how-to/info" target="_blank">Visit Gardening.knowhow.com</Button>
                       
                     </Card.Body>
                 </Card>
@@ -54,7 +54,7 @@ const Docs = () => {
                             garden is rich in terms of both nutrients and taste!
                             </Card.Text>
                             
-                            <Button variant="success" href="https://sustainabilityx.co/15-sustainable-gardening-ideas-b22be80dfc7f">Visit Sustainabilit.co</Button>
+                            <Button variant="success" href="https://sustainabilityx.co/15-sustainable-gardening-ideas-b22be80dfc7f" target="_blank">Visit Sustainabilit.co</Button>
                         
                         </Card.Body>
                     </Card>
@@ -73,7 +73,7 @@ const Docs = () => {
                             in rudimentary vessels (clay pots) are full of microbes and dirt. 
                             </Card.Text>
                             
-                            <Button variant="success" href="https://www.healthline.com/health/most-powerful-medicinal-plants">Visit Healthline.com</Button>
+                            <Button variant="success" href="https://www.healthline.com/health/most-powerful-medicinal-plants" target="_blank">Visit Healthline.com</Button>
                         
                         </Card.Body>
                     </Card>
