@@ -15,7 +15,7 @@ const Member = ({ data }) => {
         <p className="card alert-success alert-dismissible h5 font-italic mb-3">{member.description}</p>
         <hr />
         <div className='col text-center'>
-            <img className='img-fluid rounded cent cent'  src={ member.image } alt="" />
+            <img className='img-fluid rounded'  src={ member.image } alt="" />
           </div>
         <h4 className="card alert-success alert-dismissible center-block text-xl-center">{member.status}</h4>
       </div>

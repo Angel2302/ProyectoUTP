@@ -47,7 +47,7 @@ const Members = ({ match }) => {
           name: "Sebastian Zapata Ossa",
           description:
             "From Riosucio. Petroleum engineer, software development student at UNAD, specialized in front end development",
-          status: "front-end, back-end",
+          status: "Front-End",
           image:"https://i.ibb.co/FxqBvr6/87587657-10221861804311714-2116297396542504960-n.jpg"
         
         },
@@ -70,7 +70,7 @@ const Members = ({ match }) => {
       <div class= "row">
         <div className= "col list-group-item " >
           <h3>Members</h3>
-          <ul className="list-group card allert-secondary"><li class="list-group-item">{linkList}</li>
+          <ul className="list-group card allert-secondary"><li class="list-group-item item-secondary">{linkList}</li>
           
           </ul>
         </div>
