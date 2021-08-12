@@ -10,17 +10,17 @@ const Product = ({ data }) => {
 
   if (product) {
     productData = (
-      <div className='container'>
+      <div >
         <div className='row'>
 
-          <div className='col'>
-            <img class='img-fluid rounded'  src={ product.imageUrl }  />
+          <div className='col text center'>
+            <img className='img-fluid rounded mt-3 mb-4 ' width="500" height="304"  src={ product.imageUrl }  />
           </div>
-          <div className='col'>
-            <h3> { product.nombre } </h3>
-            <p>{ product.funcion }</p>
+          <div className='col text-center'>
+            <h3 className="font-italic text-capitalize"> { product.nombre } </h3>
+            <p className="">{ product.funcion }</p>
             <hr />
-            <h4>{ product.color }</h4>
+            <h5 className="quoted-text text-capitalize">{ product.color }</h5>
           </div>
         </div>  
       </div>
@@ -30,8 +30,8 @@ const Product = ({ data }) => {
   }
 
   return (
-    <div>
-      <div>{productData}</div>
+    <div className="containe-fluid ">
+      <div className="container">{productData}</div>
     </div>
   );
 };

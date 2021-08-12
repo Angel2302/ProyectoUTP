@@ -36,8 +36,8 @@ const Products = () => {
   const linkList = productData.products.map((product) => {
     console.log(product)
     return (
-      <li key={product.id}>
-        <Link className= "h5" to={`${url}/${product.id}`}>{product.nombre}</Link>
+      <li key={product.id} className="text-black">
+        <Link className= "h5 text-black text-capitalize" to={`${url}/${product.id}`}>{product.nombre}</Link>
       </li>
     );
   });
