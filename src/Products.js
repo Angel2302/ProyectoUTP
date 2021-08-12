@@ -46,7 +46,7 @@ const Products = () => {
     <div className= "container">
       <div className= "row">
         <div className= "col" >
-          <h3>Products</h3>
+          <h3>Item</h3>
           <ul>{linkList}</ul>
         </div>
         <div className= "col">
