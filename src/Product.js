@@ -20,7 +20,7 @@ const Product = ({ data }) => {
             <h3 className="font-italic text-capitalize"> { product.nombre } </h3>
             <p className="">{ product.funcion }</p>
             <hr />
-            <h5 className="quoted-text text-capitalize">{ product.color }</h5>
+            <h6 className="text-capitalize">{ product.color }</h6>
           </div>
         </div>  
       </div>
