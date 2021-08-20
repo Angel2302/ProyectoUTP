@@ -21,7 +21,7 @@ const Members = ({ match }) => {
           description:
             "From Bogotá, Currently in Cartagena. 6th semester in Systems Engineering, with  expierience in several technologies.",
           status: "Back-end (Tester)",
-          image:"https://i.ibb.co/BCTBXM2/Cristian.jpg"
+          image:"https://i.ibb.co/6JHdzkX/Cristian.jpg"
         
         },
         {
@@ -30,7 +30,7 @@ const Members = ({ match }) => {
           description:
             "From Cúcuta. Electronic Engineering Student at UNET, currently in Industrial Internship.",
           status: "Front-end",
-          image:"https://i.ibb.co/x72xHWC/1617133316544.jpg"
+          image:"https://i.ibb.co/nQy35Bn/1617133316544.jpg"
         
         },
         {
@@ -39,7 +39,7 @@ const Members = ({ match }) => {
           description:
             "From Medellín. Electronic Technician and Auto Electrician from SENA, currently Manager at Taximeters shop",
           status: "Front-end (persistencia)",
-          image:"https://i.ibb.co/N3fwwJ2/Bernardo.jpg"
+          image:"https://i.ibb.co/41Ppcqj/Bernardo.jpg"
         
         },
         {
@@ -48,7 +48,7 @@ const Members = ({ match }) => {
           description:
             "From Riosucio. Petroleum engineer, software development student at UNAD, specialized in front end development",
           status: "Front-End",
-          image:"https://i.ibb.co/FxqBvr6/87587657-10221861804311714-2116297396542504960-n.jpg"
+          image:"https://i.ibb.co/RcvZtTL/87587657-10221861804311714-2116297396542504960-n.jpg"
         
         },
       ];
