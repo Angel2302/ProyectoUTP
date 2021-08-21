@@ -13,7 +13,7 @@ const Members = ({ match }) => {
           description:
             "From Fusagasugá. Systems Engineering Student, Scrum and agile technologies manager certified",
           status: "Gestor (Scrum Master)",
-          image:"https://i.ibb.co/T2kqPMK/Alex.jpg"
+          image:"https://i.ibb.co/cTKfhWT/Alex.jpg"
         },
         {
           id: 2,
